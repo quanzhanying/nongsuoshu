@@ -1,0 +1,24 @@
+<div class="devise-view">
+  <img src="<%= asset_path("bg.jpg") %>" alt="background image">
+<div class="devise-sign-up">
+  <div class="left">
+    <h1>浓缩书 </h1>
+    <div class="description">
+      <h2>
+大脑飞速升级</h2>
+      <p>同步欧美最新精华，操作系统升级不落后</p>
+      <h2>一天一块钱，人生进步百分之一点</h2>
+      <p>1.01的365次方等于37.8。一年人生升级 37.8 倍</p>
+    </div>
+  </div>
+  <div class="right">
+    <% if params[:controller] == "devise/users/registrations" %>
+      <%= render partial: "sign_up" %>
+    <% elsif params[:controller] == "devise/sessions" %>
+      <%= render partial: "log_in" %>
+    <% elsif params[:controller] == "devise/passwords" %>
+     <%= render partial: "new_password" %>
+    <% end %>
+  </div>
+  </div>
+</div>
