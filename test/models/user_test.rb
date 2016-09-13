@@ -18,6 +18,12 @@
 #  is_admin               :boolean          default(FALSE)
 #  user_name              :string
 #  expired_at             :datetime
+#  is_paid                :boolean
+#
+# Indexes
+#
+#  index_users_on_email                 (email) UNIQUE
+#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 # Indexes
 #

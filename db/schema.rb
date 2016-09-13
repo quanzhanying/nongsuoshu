@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160913140909) do
+
 
   create_table "books", force: :cascade do |t|
     t.string   "title"
@@ -27,9 +27,11 @@ ActiveRecord::Schema.define(version: 20160913140909) do
     t.integer  "pv"
     t.string   "comments_count"
     t.string   "amazon_link"
+
     t.string   "translater_name"
     t.boolean  "is_free",           default: false
     t.boolean  "is_editor_choice",  default: false
+
     t.index ["aasm_state"], name: "index_books_on_aasm_state"
   end
 
@@ -76,6 +78,7 @@ ActiveRecord::Schema.define(version: 20160913140909) do
     t.boolean  "is_admin",               default: false
     t.string   "user_name"
     t.datetime "expired_at"
+    t.boolean  "is_paid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

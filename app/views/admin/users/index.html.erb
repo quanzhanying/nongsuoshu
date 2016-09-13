@@ -9,8 +9,6 @@
     <th>ID</th>
     <th>用户名</th>
     <th>邮箱地址</th>
-    <th>注册时间</th>
-    <th>认证状态</th>
     <th>操作</th>
   </thead>
   <tbody>
@@ -27,12 +25,10 @@
     </td>
     <td>
       <%= link_to("编辑用户信息", edit_admin_user_path(user), :class => "btn btn-sm btn-default") %>
-      <% if !user.is_admin %>
-        <%= link_to("设为管理员", promote_admin_user_path(user) , :method => :post, :data => { :confirm => "确定将该用户权限提升为管理员?" },:class => "btn btn-sm btn-default") %>
+      <% if !user.is_paid %>
+        <%= link_to("设为付费会员", promote_admin_user_path(user) , :method => :post, :data => { :confirm => "确定将该用户权限提升为管理员?" },:class => "btn btn-sm btn-default") %>
       <% else %>
-            <% if user.email != "admin@gmail.com" %>
-        <%= link_to("设为普通用户", demote_admin_user_path(user) , :method => :post, :data => { :confirm => "确定将该用户权限降为普通用户?" },:class => "btn btn-sm btn-default") %>
-            <% end %>
+        <%= link_to("设为非付费会员", demote_admin_user_path(user) , :method => :post, :data => { :confirm => "确定将该用户权限降为普通用户?" },:class => "btn btn-sm btn-default") %>
       <% end %>
     </td>
   </tr>
