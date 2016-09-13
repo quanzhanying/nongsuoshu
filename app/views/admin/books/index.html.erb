@@ -32,7 +32,7 @@
                 <%= link_to(book.title, book_path(book)) %>
             </td>
             <td>
-                <%= book.category.chs_name %>
+                <%= book.category.try(:chs_name) %>
             </td>
 
             <td>

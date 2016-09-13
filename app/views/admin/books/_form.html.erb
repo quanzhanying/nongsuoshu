@@ -1,7 +1,7 @@
 <%= simple_form_for [:admin, @book] do |f| %>
   <%= f.input :title, :label =>"浓缩书名称" %>
   <%= f.input :content, :label =>"浓缩书内容" %>
-  <%= f.input :category_id,:collection => @categories,:label_method => :chs_name,:value_method => :id,:label => "请选择分类",:include_blank => false ,input_html: { class: 'edit-input-short-width'}%>
+  <%= f.input :category_id,:collection => @categories, :include_blank => "(select if none)",  :label_method => :chs_name,:value_method => :id,:label => "请选择分类",:include_blank => false ,input_html: { class: 'edit-input-short-width'}%>
 
 
   <% if ["new", "create"].include?(controller.action_name) %>
