@@ -1,14 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @book.title %>
-</p>
+<div class="row">
+  <div class="col-md-2 col-md-offset-1 col-lg-2 book-side">
+    <div class="thumb">
+      <img src="/images/book1.jpg" alt="even">
+    </div>
+    <div class="book-info">
+      <h3><%= @book.title %></h3>
+      <span class="operate">
+        <i class="fa fa-heart-o" aria-hidden="true"></i>
+        <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+      </span>
+    </div>
+  </div>
+  <div class="col-md-8 col-lg-8 book-content">
+      <div class="header">
+        <h2><%= @book.title %></h2>
+      </div>
+      <div class="content">
+        <%= @book.content %>
+      </div>
+  </div>
+</div>
 
-<p>
-  <strong>Content:</strong>
-  <%= @book.content %>
-</p>
-
-<%#= link_to 'Edit', edit_book_path(@book) %> |
+<%#= link_to 'Edit', edit_book_path(@book) %> 
 <%#= link_to 'Back', books_path %>
