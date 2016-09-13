@@ -21,7 +21,12 @@ puts "4 Users' accounts created."
 
 require "csv"
 CSV.foreach("doc/book_sample.csv") do |row|
-  Book.create(title: row[0], content: row[1])
+  Book.create(
+    title: row[0],
+    content: row[1],
+    is_free: row[2],
+    is_editor_choice: row[3]
+  )
 end
 
 puts "books create."
