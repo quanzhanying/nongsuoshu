@@ -17,6 +17,9 @@
                 <div class="col-md-2">
                     <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
                         <li><%= active_link_to("Books", admin_books_path , :active => :inclusive, :wrap_tag => :li ) %></li>
+                        <li><%= active_link_to("Plans", admin_plans_path , :active => :inclusive, :wrap_tag => :li ) %></li>
+                          <li><%= active_link_to("Users", admin_users_path , :active => :inclusive, :wrap_tag => :li ) %></li>
+                            <li><%= active_link_to("Categories", admin_categories_path , :active => :inclusive, :wrap_tag => :li ) %></li>
                     </ul>
 
                 </div>
@@ -33,12 +36,7 @@
         <%= render "common/footer" %>
     </div>
 
-
-
-
-
-            <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <%= yield :javascripts %>
 </html>
