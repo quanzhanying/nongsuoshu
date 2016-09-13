@@ -18,6 +18,8 @@
 #  comments_count    :string
 #  amazon_link       :string
 #  translater_name   :string
+#  is_free           :boolean          default(FALSE)
+#  is_editor_choice  :boolean          default(FALSE)
 #
 # Indexes
 #
