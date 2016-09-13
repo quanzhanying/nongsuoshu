@@ -28,3 +28,27 @@
   min-height: 150px;
   margin-bottom: 15px;
 }
+
+
+// Sticky Footer - add by chpwang
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -142px; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  height: 142px; 
+}
+// Sticky Footer - add by chpwang
+
+
