@@ -15,9 +15,10 @@ ActiveRecord::Schema.define(version: 20160913124933) do
   create_table "books", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
-<<<<<<< HEAD
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
+    t.string   "aasm_state",        default: "book_created"
+    t.integer  "category_id"
     t.text     "preface"
     t.string   "author_name"
     t.date     "published_date"
@@ -26,13 +27,7 @@ ActiveRecord::Schema.define(version: 20160913124933) do
     t.integer  "pv"
     t.string   "comments_count"
     t.string   "amazon_link"
-=======
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
-    t.string   "aasm_state",  default: "book_created"
-    t.integer  "category_id"
     t.index ["aasm_state"], name: "index_books_on_aasm_state"
->>>>>>> ce4e64758c1878544f53245b122ee3b133c52946
   end
 
   create_table "categories", force: :cascade do |t|
