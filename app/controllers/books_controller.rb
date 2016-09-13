@@ -16,11 +16,14 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
+    @is_valid_subscriber = true
     unless current_user
       @book.content = view_context.truncate(@book.content, length: 140)
+      @is_valid_subscriber = false;
     end
     if current_user && !current_user.valid_subscriber?
       @book.content = view_context.truncate(@book.content, length: 140)
+      @is_valid_subscriber = false;
     end
     drop_breadcrumb(@book.title, book_path(@book))
   end
