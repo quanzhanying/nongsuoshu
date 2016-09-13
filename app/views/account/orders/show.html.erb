@@ -1,0 +1,37 @@
+<div class="col-sm-12 col-md-12 col-lg-12">
+  <h1>购买详情</h1>
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <td>项目名称</td>
+        <td>年费天数</td>
+        <td>金额</td>
+
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: "plan_items", object: @order.plan, :as => :item %>
+    </tbody>
+  </table>
+</div>
+
+<div class="col-sm-12 col-md-12 col-lg-12 text-right">
+  <p>
+      总计：¥ <%= @order.price %>
+  </p>
+</div>
+
+
+<div class="pull-right">
+  <% if @order.paid? %>
+  <% if @order.payment_method == 'Alipay' %>
+  <%= link_to("您已使用支付宝支付", "#", :class => "btn btn-info disabled") %>
+  <% else %>
+  <% @order.payment_method == 'WeChat' %>
+  <%= link_to("您已使用微信支付", "#", :class => "btn btn-success disabled") %>
+  <% end %>
+<% else %>
+    <%= link_to("支付宝支付", pay_with_alipay_account_order_path(@order.token), method: :post, class: "btn btn-info") %>
+    <%= link_to("微信支付", pay_with_wechat_account_order_path(@order.token), method: :post, class: "btn btn-success") %>
+  <% end %>
+</div>
