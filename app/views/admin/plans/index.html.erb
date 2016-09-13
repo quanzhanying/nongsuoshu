@@ -28,6 +28,9 @@
       <td>
           <%= plan.plan_date %>
       </td>
+      <td>
+        <%= render :partial => "admin/plans/plan_options", :locals => { :plan => plan } %>
+      </td>
         <td>
             <%= plan.created_at %>
         </td>

@@ -1,0 +1,17 @@
+
+  <div class="dropdown pull-left col-xs-offset-1">
+    <button class="btn btn-default btn-xs dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      选项
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <li><%= link_to("Edit", edit_admin_plan_path(plan)) %></li>
+      <li>
+        <%= link_to("删除", admin_plan_path(plan), method: :delete,   data: { confirm:  "Are you sure?" } ) %>
+      </li>
+      <li>
+
+      </li>
+
+    </ul>
+  </div>
