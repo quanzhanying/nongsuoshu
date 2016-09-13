@@ -2,7 +2,7 @@
 
 <h1>Books</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Title</th>
@@ -17,8 +17,8 @@
         <td><%= book.title %></td>
         <td><%= book.content %></td>
         <td><%= link_to 'Show', book %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!-- <td><%#= link_to 'Edit', edit_book_path(book) %></td>
+        <td><%#= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>

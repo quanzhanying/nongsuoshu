@@ -16,7 +16,9 @@ class BooksController < ApplicationController
     if current_user && !current_user.has_authority?
       @book.content = view_context.truncate(@book.content, :length => 140)
     end
+    drop_breadcrumb( @book.title , book_path(@book))
   end
+
 
   # GET /books/new
   def new
@@ -67,6 +69,25 @@ class BooksController < ApplicationController
     end
   end
 
+
+  def search
+    if @query_string.present?
+      search_result = Book.ransack(@search_criteria).result(distinct: true)
+      @books_search = search_result.paginate(page: params[:page], per_page: 3)
+      set_page_title "搜索 #{@query_string}"
+    end
+  end
+
+  protected
+
+  def validate_search_key
+    @query_string = params[:q].gsub(/\\|\'|\/|\?/, "") if params[:q].present?
+    @search_criteria = search_criteria(@query_string)
+  end
+
+  def search_criteria(query_string)
+    { title_cont: query_string, content_cont: query_string}
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_book

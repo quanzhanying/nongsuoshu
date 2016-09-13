@@ -1,0 +1,13 @@
+<div class="header-categories__search">
+  <%= form_tag search_projects_path , method: :get, class: "navbar-form" do %>
+    <div style="margin:0;padding:0;display:inline"><input name="utf8" value="✓" type="hidden"></div>
+    <div class="search-field -border-light">
+      <div class="search-field__input">
+         <input type="text" class="js-term search-field__input-field" name="q" value="<%= params[:q] %>" placeholder="请输入项目名称">
+      </div>
+      <button class="search-field__button" type="submit">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+     <% end %>
+</form></div>
