@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20160913124933) do
   create_table "books", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
+<<<<<<< HEAD
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.text     "preface"
@@ -25,6 +26,13 @@ ActiveRecord::Schema.define(version: 20160913124933) do
     t.integer  "pv"
     t.string   "comments_count"
     t.string   "amazon_link"
+=======
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.integer  "category_id"
+    t.string   "aasm_state",  default: "book_created"
+    t.index ["aasm_state"], name: "index_books_on_aasm_state"
+>>>>>>> ce4e64758c1878544f53245b122ee3b133c52946
   end
 
   create_table "categories", force: :cascade do |t|
@@ -69,7 +77,7 @@ ActiveRecord::Schema.define(version: 20160913124933) do
     t.datetime "updated_at",                          null: false
     t.         "is_admin"
     t.string   "user_name"
-    t.datetime "expired_at"
+    t.date     "expire_date"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
