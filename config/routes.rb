@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+
   resources :categories
 
   resources :plans
@@ -12,7 +14,12 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :books
+    resources :books do
+      member do
+        post :publish
+        post :hide
+      end
+    end
     resources :faqs
     resources :plans
     resources :users do

@@ -10,13 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160913110439) do
+ActiveRecord::Schema.define(version: 20160913113916) do
 
   create_table "books", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.integer  "category_id"
+    t.string   "aasm_state",  default: "book_created"
+    t.index ["aasm_state"], name: "index_books_on_aasm_state"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -35,6 +38,7 @@ ActiveRecord::Schema.define(version: 20160913110439) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.string   "token"
+    t.string   "aasm_state"
   end
 
   create_table "plans", force: :cascade do |t|

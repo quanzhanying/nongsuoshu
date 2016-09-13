@@ -17,7 +17,7 @@
 #  updated_at             :datetime         not null
 #  is_admin               :true
 #  user_name              :string
-#  expire_date            :date
+#  expire_at            :date
 #
 
 class User < ApplicationRecord
@@ -32,7 +32,18 @@ class User < ApplicationRecord
     is_admin
   end
 
-  def has_authority?
-    return true
+  def valid_subscriber?
+    expired_at && expired_at > Time.zone.now
+  end
+
+  def add_subscription_date!(plan_date)
+    begin_date =
+      if expired_at && expired_at > Time.zone.now
+        expired_at
+      else
+        Time.zone.now
+      end
+    self.expired_at = begin_date + plan_date.days
+    save
   end
 end
