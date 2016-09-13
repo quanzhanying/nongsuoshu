@@ -1,14 +1,18 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-10 col-md-offset-1">
 
-<p>
-  <strong>Title:</strong>
-  <%= @book.title %>
-</p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @book.content %>
-</p>
 
-<%#= link_to 'Edit', edit_book_path(@book) %> |
-<%#= link_to 'Back', books_path %>
+  <h2> <%= @book.title %> </h2>
+
+
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+        正文
+      </div>
+      <div class="panel-body" id="freeBooks">
+
+      </div>
+  </div>
+
+</div>
