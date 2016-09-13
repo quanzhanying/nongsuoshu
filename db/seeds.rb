@@ -32,8 +32,6 @@ end
 puts "books create."
 
 # 共5个用户，1个admin
-Category.create!([name: "video", chs_name: "精选"])
-Category.create!([name: "music", chs_name: "免费"])
 Category.create!([name: "writing", chs_name: "励志"])
 Category.create!([name: "science", chs_name: "经济"])
 Category.create!([name: "technology", chs_name: "技能"])
