@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources :plans
 
+  resources :orders
+
   devise_for :users
 
   namespace :admin do
