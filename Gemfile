@@ -32,7 +32,7 @@ gem "simple_form"
 gem "seo_helper"
 gem "will_paginate"
 gem "active_link_to"
-gem "fontawesome-rails"
+gem "font-awesome-rails"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
