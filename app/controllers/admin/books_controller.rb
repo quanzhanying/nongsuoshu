@@ -3,14 +3,22 @@ class Admin::BooksController < AdminController
   layout "admin"
 
   def index
-    @books = Book.all
+    @books =
+      if params[:category_id]
+        Book.recent.where(category_id: params[:category_id]).includes(:category).paginate(page: params[:page], per_page: 20)
+      else
+        Book.all.recent.includes(:category).paginate(page: params[:page], per_page: 20)
+      end
+    @categories = Category.all
   end
 
   def new
     @book = Book.new
+    @categories = Category.all
   end
 
   def edit
+    @categories = Category.all
   end
 
   def create
@@ -41,13 +49,13 @@ class Admin::BooksController < AdminController
   def publish
     @book.publish!
     flash[:notice] = "已将该浓缩书上线"
-    redirect_to admin_books_path
+    redirect_to :back
   end
 
   def hide
     @book.hide!
     flash[:notice] = "已将该浓缩书下线"
-    redirect_to admin_books_path
+    redirect_to :back
   end
 
   protected
@@ -59,6 +67,6 @@ class Admin::BooksController < AdminController
   private
 
   def book_params
-    params.require(:book).permit(:title, :content)
+    params.require(:book).permit(:title, :content, :category_id)
   end
 end

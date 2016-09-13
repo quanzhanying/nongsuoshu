@@ -12,7 +12,8 @@
 class Book < ApplicationRecord
   validates :title, presence: true
   validates :content, presence: true
-
+  belongs_to :category
+  scope :recent, -> { order("created_at DESC") }
 
   include AASM
 
