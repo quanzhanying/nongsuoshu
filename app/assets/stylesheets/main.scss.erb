@@ -5,22 +5,6 @@ body {
   color: #333;
 }
 
-// .footer {
-//   background: #f8f8f8;
-//   color: #333;
-//   bottom: 0;
-//   height: 100px;
-//   position: absolute;
-//   width: 100%;
-//   margin-top: 20px;
-//   padding-top: 20px;
-//   a:link {color: #333};
-//   a:visited {color: #333}	;
-//   a:hover {color: #666}	;
-//   a:active {color: #666};
-// }
-
-
 // Sticky Footer - add by chpwang
 * {
   margin: 0;
@@ -31,13 +15,26 @@ html, body {
 .page-wrap {
   min-height: 100%;
   /* equal to footer height */
-  margin-bottom: -142px;
+  margin-bottom: -100px;
 }
 .page-wrap:after {
   content: "";
   display: block;
 }
 .site-footer, .page-wrap:after {
-  height: 142px;
+  height: 100px;
 }
 // Sticky Footer - add by chpwang
+
+.site-footer{
+  background-color: #dedede;
+}
+
+.footer {
+  color: #888;
+  padding-top: 20px;
+  a:link {color: #333};
+  a:visited {color: #333}	;
+  a:hover {color: #666}	;
+  a:active {color: #666};
+}

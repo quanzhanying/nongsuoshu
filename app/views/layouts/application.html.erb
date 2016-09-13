@@ -9,17 +9,19 @@
     </head>
 
     <body>
-        <div class="container page-wrap">
-            <%= render "common/navbar" %>
+        <div>
+          <%= render "common/navbar" %>
+        </div>
+        <div class="container page-wrap ">
             <%= render "common/flashes" %>
             <div class="row">
-                <div class="col-md-12">
+                <div>
                     <%# render_breadcrumb %>
                     <%= yield %>
                 </div>
             </div>
         </div>
-        <div class="container site-footer">
+        <div class="site-footer">
             <%= render "common/footer" %>
         </div>
             <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
