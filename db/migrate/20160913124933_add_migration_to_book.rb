@@ -8,5 +8,6 @@ class AddMigrationToBook < ActiveRecord::Migration[5.0]
     add_column :books, :pv, :integer
     add_column :books, :comments_count, :string
     add_column :books, :amazon_link, :string
+    add_column :books, :translater_name, :string
   end
 end
