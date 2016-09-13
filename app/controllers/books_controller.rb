@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
-
+  before_action :validate_search_key, only: [:search]
   # GET /books
   # GET /books.json
   def index
@@ -71,10 +71,10 @@ class BooksController < ApplicationController
 
 
   def search
+    binding.pry
     if @query_string.present?
       search_result = Book.ransack(@search_criteria).result(distinct: true)
       @books_search = search_result.paginate(page: params[:page], per_page: 3)
-      set_page_title "搜索 #{@query_string}"
     end
   end
 
@@ -86,8 +86,10 @@ class BooksController < ApplicationController
   end
 
   def search_criteria(query_string)
-    { title_cont: query_string, content_cont: query_string}
+    { title_cont: query_string, content_cont: query_string, :m => 'or'}
   end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_book

@@ -1,0 +1,7 @@
+
+  <tr>
+    <td><%= book.title %></td>
+    <td><%= render_highlight_title(book, @query_string) %></td>
+    <td><%= render_highlight_content(book, @query_string) %></td>
+    <td><%= link_to 'Show', book %></td>
+  </tr>
