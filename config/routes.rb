@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   resources :categories
   resources :books
+
+  resources :plans
+
   devise_for :users
 
   namespace :admin do
