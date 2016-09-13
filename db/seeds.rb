@@ -28,3 +28,5 @@ Category.create!([name: "technology", chs_name: "技术"])
 Category.create!([name: "Painting", chs_name: "绘画"])
 
 puts "6 Categories created."
+
+Plan.create!(name: "年费方案", price: 365, plan_date: 365)
