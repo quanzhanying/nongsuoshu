@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
-
+  before_action :validate_search_key, only: [:search]
   # GET /books
   # GET /books.json
   def index
@@ -10,7 +10,15 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
+    unless current_user
+      @book.content = view_context.truncate(@book.content, :length => 140)
+    end
+    if current_user && !current_user.has_authority?
+      @book.content = view_context.truncate(@book.content, :length => 140)
+    end
+    drop_breadcrumb( @book.title , book_path(@book))
   end
+
 
   # GET /books/new
   def new
@@ -60,6 +68,27 @@ class BooksController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+  def search
+    binding.pry
+    if @query_string.present?
+      search_result = Book.ransack(@search_criteria).result(distinct: true)
+      @books_search = search_result.paginate(page: params[:page], per_page: 3)
+    end
+  end
+
+  protected
+
+  def validate_search_key
+    @query_string = params[:q].gsub(/\\|\'|\/|\?/, "") if params[:q].present?
+    @search_criteria = search_criteria(@query_string)
+  end
+
+  def search_criteria(query_string)
+    { title_cont: query_string, content_cont: query_string, :m => 'or'}
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

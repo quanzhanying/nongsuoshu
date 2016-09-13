@@ -31,4 +31,8 @@ class User < ApplicationRecord
   def admin?
     is_admin
   end
+
+  def has_authority?
+    return true
+  end
 end

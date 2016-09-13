@@ -33,6 +33,7 @@ gem "seo_helper"
 gem "will_paginate"
 gem "active_link_to"
 gem "font-awesome-rails"
+gem "ransack"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -41,6 +42,8 @@ group :development, :test do
   gem "byebug", platform: :mri
   gem "annotate"
   gem "rubocop"
+  gem "pry"
+  gem "pry-nav"
 end
 
 group :development do

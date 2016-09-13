@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
   resources :categories
-  resources :books
 
   resources :plans
 
   resources :orders
 
-  devise_for :users
+  resources :books do
+    collection do
+      get :search
+    end
+  end
 
   namespace :admin do
     resources :books
