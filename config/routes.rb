@@ -22,7 +22,12 @@ Rails.application.routes.draw do
     end
     resources :faqs
     resources :plans
-    resources :users
+    resources :users do
+      member do
+      post :promote
+      post :demote
+      end
+    end
     resources :categories
   end
 
