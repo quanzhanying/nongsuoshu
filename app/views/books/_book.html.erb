@@ -1,14 +1,15 @@
 <div class="col-sm-4 shell">
     <div class="header">
         <h3>
-            <a href="book/5775e00b3b6917045edb0d19/preview">
-                关于目的
-            </a>
+
+          <%= render_book_title(book) %>
+
+
         </h3>
     </div>
     <div class="book-image-wrapper">
-        <a class="thumbnail book-image" href="book/5775e00b3b6917045edb0d19/preview">
-            <img alt="..." data-ignore="1" src="http://oaurkepr4.bkt.clouddn.com/375382d7-c6b1-4c96-b1fd-41f795ae36d7.jpg">
-        </a>
+
+      <%= render_book_cover(book) %>
+
     </div>
 </div>
