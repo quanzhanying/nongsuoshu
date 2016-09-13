@@ -4,18 +4,15 @@
         <title>Nongsuoshu
         </title>
         <%= csrf_meta_tags %>
-
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
     <body>
-
-        <div class="container">
-            <%= render "common/navbar" %>
+      <%= render "common/navbar" %>
+        <div class="container col-md-12">
             <%= render "common/flashes" %>
             <div class="row" style=" padding-top:20px;">
-
                 <div class="col-md-12">
                     <%# render_breadcrumb %>
                     <%= yield %>
@@ -24,16 +21,7 @@
         </div>
 
     </body>
-    <div class="container">
         <%= render "common/footer" %>
-    </div>
-
-
-
-
-
-            <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= yield :javascripts %>
 </html>
