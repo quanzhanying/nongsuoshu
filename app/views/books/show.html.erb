@@ -1,27 +1,41 @@
-<p id="notice"><%= notice %></p>
 
-<div class="row">
-  <div class="col-md-2 col-md-offset-1 col-lg-2 book-side">
-    <div class="thumb">
-      <img src="/images/book1.jpg" alt="even">
+  <div class="row">
+
+    <div class="col-md-2 col-md-offset-1 col-lg-2 book-side-content">
+      <div class="book-side">
+        <div class="thumb">
+          <img src="/images/book1.jpg" alt="even">
+        </div>
+        <div class="book-info">
+          <h3><%= render_book_title(@book) %></h3>
+          <span class="operate">
+            <i class="fa fa-heart-o" aria-hidden="true"></i>
+            <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+          </span>
+        </div>
+      </div>
+      <div class="book-publish">
+        <p>作者: <%= @book.author_name %></p>
+        <p>译者: <%= @book.translater_name %></p>
+        <p>出版时间: TODO</p>
+        <p>美亚评分: TODO</p>
+        <p>用户打分: TODO</p>
+        <p>阅读数: TODO</p>
+        <p>评论数: TODO</p>
+        <p>亚马逊连结: TODO</p>
+      </div>
     </div>
-    <div class="book-info">
-      <h3><%= @book.title %></h3>
-      <span class="operate">
-        <i class="fa fa-heart-o" aria-hidden="true"></i>
-        <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-      </span>
+
+
+    <div class="col-md-8 col-lg-8 book-content">
+        <div class="header">
+          <h2><%= @book.title %></h2>
+        </div>
+        <div class="content">
+          <%= @book.content %>
+        </div>
     </div>
   </div>
-  <div class="col-md-8 col-lg-8 book-content">
-      <div class="header">
-        <h2><%= @book.title %></h2>
-      </div>
-      <div class="content">
-        <%= @book.content %>
-      </div>
-  </div>
-</div>
 
-<%#= link_to 'Edit', edit_book_path(@book) %> 
-<%#= link_to 'Back', books_path %>
+  <%#= link_to 'Edit', edit_book_path(@book) %>
+  <%#= link_to 'Back', books_path %>

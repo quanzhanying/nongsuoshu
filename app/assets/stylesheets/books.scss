@@ -6,6 +6,15 @@
   font-size: 18px;
 }
 
+.book-info a {
+  color: #606060;
+  text-decoration: none;
+}
+
+.book-info a:hover {
+  text-decoration: none;
+}
+
 //上线前去掉
 body {
   background-color: #F2F5F7 !important;
@@ -14,7 +23,8 @@ body {
 .book-side {
   background-color: #fff;
   width: 200px;
-  height: 300px;
+  height: auto;
+  padding-bottom: 5px;
 
   // overflow: hidden;
 }
@@ -34,7 +44,7 @@ body {
   background-color: #fff;
   width: 400px;
   height: 400px;
-  margin-left: 30px;
+  margin-left: 40px;
 }
 
 .book-info {
@@ -53,4 +63,12 @@ body {
 
 .book-content .content {
   margin: 30px;
+}
+
+.book-publish {
+  background-color: #fff;
+  margin-top: 15px;
+  width: 200px;
+  height: auto;
+  padding: 15px;
 }
