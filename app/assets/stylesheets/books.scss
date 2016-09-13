@@ -43,7 +43,7 @@ body {
 .book-content {
   background-color: #fff;
   width: 400px;
-  height: 400px;
+  height: auto;
   margin-left: 40px;
 }
 
@@ -63,6 +63,7 @@ body {
 
 .book-content .content {
   margin: 30px;
+  word-wrap: break-word;
 }
 
 .book-publish {
