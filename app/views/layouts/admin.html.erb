@@ -10,7 +10,7 @@
 
     <body>
 
-        <div class="container">
+        <div class="container page-wrap">
             <%= render "common/admin_navbar" %>
             <%= render "common/flashes" %>
             <div class="row" style=" padding-top:20px;">
@@ -31,10 +31,12 @@
             </div>
         </div>
 
-    </body>
-    <div class="container">
+        <div class="container page-wrap">
         <%= render "common/footer" %>
-    </div>
+        </div>
+
+    </body>
+    
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 

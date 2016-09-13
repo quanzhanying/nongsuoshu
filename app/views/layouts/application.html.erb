@@ -5,12 +5,12 @@
         </title>
         <%= csrf_meta_tags %>
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     </head>
 
     <body>
-      <%= render "common/navbar" %>
-        <div class="container col-md-12">
+        <div class="container page-wrap">
+            <%= render "common/navbar" %>
             <%= render "common/flashes" %>
             <div class="row">
                 <div class="col-md-12">
@@ -19,9 +19,10 @@
                 </div>
             </div>
         </div>
-
+        <div class="container site-footer">
+            <%= render "common/footer" %>
+        </div>
+            <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+            <%= yield :javascripts %>
     </body>
-        <%= render "common/footer" %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= yield :javascripts %>
 </html>

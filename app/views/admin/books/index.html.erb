@@ -4,6 +4,20 @@
         <tr>
             <th>ID</th>
             <th>书</th>
+            <th>
+              <li style="list-style-type:none;" class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      类型
+                      <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                      <li><%= link_to("全部", admin_books_path) %></li>
+                      <% @categories.each do |category| %>
+                      <li><%= link_to(category.chs_name, admin_books_path(category_id: category.id)) %></li>
+                      <% end %>
+                  </ul>
+              </li>
+            </th>
             <th>状态</th>
             <th>操作</th>
         </tr>
@@ -16,6 +30,9 @@
             </td>
             <td>
                 <%= link_to(book.title, book_path(book)) %>
+            </td>
+            <td>
+                <%= book.category.chs_name %>
             </td>
 
             <td>
