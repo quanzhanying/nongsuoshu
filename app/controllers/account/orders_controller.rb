@@ -5,6 +5,10 @@ class Account::OrdersController < AccountController
     @order = Order.find_by_token(params[:id])
   end
 
+  def index
+    @orders = current_user.orders.recent
+  end
+
   def pay_with_wechat
     @order.pay("wechat")
 
