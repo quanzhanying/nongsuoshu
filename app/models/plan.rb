@@ -1,18 +1,14 @@
 # == Schema Information
 #
-# Table name: categories
+# Table name: plans
 #
 #  id         :integer          not null, primary key
 #  name       :string
-#  chs_name   :string
+#  price      :integer
+#  date       :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  name: MyString
-
-two:
-  name: MyString
+class Plan < ApplicationRecord
+end

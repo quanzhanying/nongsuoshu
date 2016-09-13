@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160913094447) do
+ActiveRecord::Schema.define(version: 20160913095853) do
 
   create_table "books", force: :cascade do |t|
     t.string   "title"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 20160913094447) do
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.string   "chs_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "plans", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "price"
+    t.integer  "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -41,6 +49,7 @@ ActiveRecord::Schema.define(version: 20160913094447) do
     t.datetime "updated_at",                          null: false
     t.         "is_admin"
     t.string   "user_name"
+    t.date     "expire_date"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
