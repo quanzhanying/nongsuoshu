@@ -8,6 +8,14 @@
 
 <p id="notice"><%= notice %></p>
 
+
+<div class="row">
+  <div class="col-md-12 col-lg-12 book-bg">
+
+  </div>
+</div>
+
+
 <h1>Books</h1>
 
 <table class="table">
@@ -31,7 +39,4 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Book', new_book_path %>
+  <%= will_paginate @books %>
