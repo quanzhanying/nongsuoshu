@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Nongsuoshu</title>
-    <%= csrf_meta_tags %>
+    <head>
+        <title>Admin
+        </title>
+        <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-  <body>
-    <%= yield %>
-  </body>
+    </head>
+
+    <body>
+
+        <div class="container">
+            <%= render "common/admin_navbar" %>
+            <%= render "common/flashes" %>
+            <div class="row" style=" padding-top:20px;">
+                <div class="col-md-2">
+                    <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+                        <li><%= active_link_to("Books", admin_books_path , :active => :inclusive, :wrap_tag => :li ) %></li>
+                    </ul>
+
+                </div>
+
+                <div class="col-md-10">
+                    <%= render_breadcrumb %>
+                    <%= yield %>
+                </div>
+            </div>
+        </div>
+
+    </body>
+    <div class="container">
+        <%= render "common/footer" %>
+    </div>
+
+
+
+
+
+            <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+    <%= yield :javascripts %>
 </html>

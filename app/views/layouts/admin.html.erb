@@ -4,7 +4,6 @@
         <title>Admin
         </title>
         <%= csrf_meta_tags %>
-    <%= tag "meta", name: "fp-apikey", content: Rails.application.config.filepicker_rails.api_key %>
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     </head>
@@ -36,7 +35,7 @@
 
 
 
-          <%= filepicker_js_include_tag %>
+
 
             <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
