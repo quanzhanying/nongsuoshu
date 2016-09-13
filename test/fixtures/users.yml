@@ -15,10 +15,15 @@
 #  last_sign_in_ip        :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  is_admin               :true
+#  is_admin               :boolean          default(FALSE)
 #  user_name              :string
 #  expired_at             :datetime
 #  is_paid                :boolean
+#
+# Indexes
+#
+#  index_users_on_email                 (email) UNIQUE
+#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 # Indexes
 #

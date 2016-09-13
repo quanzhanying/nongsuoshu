@@ -1,0 +1,26 @@
+  <div>
+    <h2>我的资料</h2>
+    <div class="row">
+      <div class="col-md-2 col-lg-2" align="center">
+        <img src="<%#=current_user.image.mdimage%>" class="img-responsive">
+      </div>
+      <div class=" col-md-7 col-lg-7 ">
+        <table class="table table-user-information">
+          <tbody>
+            <tr>
+            <td >用户名</td>
+             <td><%= @user.user_name %></td>
+           </tr>
+            <tr>
+            <td>电子邮箱</td>
+            <td><%= @user.email %></td>
+            </tr>
+          </tbody>
+        </table>
+        <div>
+          <%= link_to("修改个人资料", edit_account_user_path(@user), :class => "btn btn-sm btn-default") %>
+          <%= link_to("修改密码", change_password_account_user_path(@user), class: "btn btn-sm btn-default" ) %>
+        </div>
+      </div>
+    </div>
+  </div>

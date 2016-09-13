@@ -17,6 +17,10 @@
 #  pv                :integer
 #  comments_count    :string
 #  amazon_link       :string
+#  translater_name   :string
+#  is_free           :boolean          default(FALSE)
+#  is_editor_choice  :boolean          default(FALSE)
+
 #
 # Indexes
 #
@@ -25,12 +29,12 @@
 
 class Book < ApplicationRecord
   scope :recent, -> { order("created_at DESC") }
+  scope :free, -> { where(is_free: true) }
+  scope :editor_choice, -> { where(is_editor_choice: true) }
 
   validates :title, presence: true
   validates :content, presence: true
   belongs_to :category
-
-
 
   include AASM
 

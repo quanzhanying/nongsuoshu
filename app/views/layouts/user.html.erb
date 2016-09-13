@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%= csrf_meta_tags %>
+        <link rel="shortcut icon" href="/images/rocket2.ico">
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    </head>
+
+    <body>
+      <div class="container-fluid">
+                  <%= render "common/navbar" %>
+                    <div class="container col-md-2 col-md-offset-0">
+                        <div class="notice notice-success">
+                          <li role="presentation" class="active"><%= link_to("我的资料", account_users_path) %> </li>
+                        </div>
+                        <div class="notice notice-warning">
+                          <li role="presentation" class="active"><%= link_to("我收藏的浓缩书", "#" ) %> </li>
+                        </div>
+                        <div class="notice notice-info">
+                          <li role="presentation" class="active"><%= link_to("年费会员", "#") %></li>
+                        </div>
+                        <!-- <div class="notice notice-danger">
+                          <li role="presentation" class="active"><%= link_to("用户管理",  "#") %></li>
+                        </div>
+                        <div class="notice notice-default">
+                          <li role="presentation" class="active"><%= link_to("资金流水", "#") %></li>
+                        </div> -->
+                    </div>
+
+
+
+              <div class="col-md-10 col-md-offset-0">
+                <%= render "common/flashes" %>
+                <%= yield %>
+              </div>
+            </div>
+      </div>
+        <%= render "common/footer" %>
+        <%= yield :orders_javascript %>
+    </body>
+</html>

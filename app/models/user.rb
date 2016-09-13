@@ -15,10 +15,11 @@
 #  last_sign_in_ip        :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  is_admin               :true
+#  is_admin               :boolean          default(FALSE)
 #  user_name              :string
 #  expired_at             :datetime
 #  is_paid                :boolean
+
 #
 # Indexes
 #
@@ -37,7 +38,7 @@ class User < ApplicationRecord
   def admin?
     is_admin
   end
-  
+
   def paid?
     is_paid
   end
