@@ -33,6 +33,7 @@ gem "seo_helper"
 gem "will_paginate"
 gem "active_link_to"
 gem "font-awesome-rails"
+gem "aasm"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

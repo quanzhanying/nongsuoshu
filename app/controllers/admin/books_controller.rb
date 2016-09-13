@@ -1,7 +1,7 @@
 class Admin::BooksController < ApplicationController
-  before_action :find_book_by_id, only: [:edit, :update, :destroy, :publish, :offline]
+  before_action :find_book_by_id, only: %i(edit update destroy publish hide)
   layout "admin"
-  
+
   def index
     @books = Book.all
   end
@@ -15,13 +15,12 @@ class Admin::BooksController < ApplicationController
 
   def create
     @book = Book.new(book_params)
-      if @book.save
-        flash[:notice] = "浓缩书创建成功"
-        redirect_to admin_books_path
-      else
-        render :new
-      end
-
+    if @book.save
+      flash[:notice] = "浓缩书创建成功"
+      redirect_to admin_books_path
+    else
+      render :new
+    end
   end
 
   def update
@@ -39,6 +38,17 @@ class Admin::BooksController < ApplicationController
     redirect_to admin_books_path
   end
 
+  def publish
+    @book.publish!
+    flash[:notice] = "已将该浓缩书上线"
+    redirect_to admin_books_path
+  end
+
+  def hide
+    @book.hide!
+    flash[:notice] = "已将该浓缩书下线"
+    redirect_to admin_books_path
+  end
 
   protected
 
@@ -51,5 +61,4 @@ class Admin::BooksController < ApplicationController
   def book_params
     params.require(:book).permit(:title, :content)
   end
-
 end
