@@ -11,4 +11,29 @@ class Order < ApplicationRecord
   def paid?
     is_paid
   end
+
+  include AASM
+
+  scope :recent, -> { order("created_at DESC") }
+
+  aasm do
+    state :unpaid, initial: true
+    state :paid
+    state :order_cancelled
+
+    event :make_payment do
+      transitions from: :unpaid, to: :paid
+    end
+
+    event :cancel_order do
+      transitions from: :unpaid, to: :order_cancelled
+    end
+  end
+
+  def pay(pay_way)
+    self.payment_method = pay_way
+    make_payment!
+
+    save
+  end
 end
