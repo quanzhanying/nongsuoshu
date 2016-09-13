@@ -11,8 +11,9 @@
             <ul class="nav navbar-nav navbar-right">
 
               <li>
-
+                <%= link_to("购买会员", plans_path ) %> 
               </li>
+
 
                 <% if !current_user %>
                 <li><%= link_to("註冊", new_user_registration_path) %>
