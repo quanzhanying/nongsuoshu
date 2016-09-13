@@ -10,10 +10,13 @@
 #
 
 class Book < ApplicationRecord
+  scope :recent, -> { order("created_at DESC") }
+
   validates :title, presence: true
   validates :content, presence: true
   belongs_to :category
-  scope :recent, -> { order("created_at DESC") }
+
+
 
   include AASM
 
@@ -29,6 +32,5 @@ class Book < ApplicationRecord
     event :hide do
       transitions from: :online, to: :offline
     end
-
   end
 end
