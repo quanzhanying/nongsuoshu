@@ -31,11 +31,12 @@
                 <br>
                 <div class="container text-center">
                     <p class="lead text-danger text-left">
-                        订单总计：¥ 6000.0
+                        订单总计：¥ <%= Plan.yearly_plan.price %>
                     </p>
-                    <a class="btn btn-success btn-lg" rel="nofollow" data-method="post" href="/account/orders/2a17651b-a708-4019-ade0-66ed783b9bd5/pay_with_wechat">微信支付</a>
-                    <a class="btn btn-info btn-lg" rel="nofollow" data-method="post" href="/account/orders/2a17651b-a708-4019-ade0-66ed783b9bd5/pay_with_alipay">支付宝支付</a>
-                    <a class="btn btn-secondary" rel="nofollow" data-method="post" href="/account/orders/2a17651b-a708-4019-ade0-66ed783b9bd5/cancel_order">取消订单</a>
+
+                    <%= simple_form_for @order do |f| %>
+                      <%= f.submit "提交订单", :class => "btn btn-success btn-lg",  disable_with: "提交中..." %>
+                    <% end %>
                 </div>
             </div>
         </div>

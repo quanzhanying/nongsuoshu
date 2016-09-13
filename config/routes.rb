@@ -15,5 +15,15 @@ Rails.application.routes.draw do
     resources :users
     resources :categories
   end
+
+  namespace :account do
+    resources :orders do
+      member do
+        post :pay_with_alipay
+        post :pay_with_wechat
+      end
+    end
+  end
+
   root to: "books#index"
 end
