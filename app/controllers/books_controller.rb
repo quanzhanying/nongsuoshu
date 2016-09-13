@@ -10,7 +10,10 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
-    unless current_user || !current_user.has_authority?
+    unless current_user
+      @book.content = view_context.truncate(@book.content, :length => 140)
+    end
+    if current_user && !current_user.has_authority?
       @book.content = view_context.truncate(@book.content, :length => 140)
     end
   end

@@ -41,6 +41,8 @@ group :development, :test do
   gem "byebug", platform: :mri
   gem "annotate"
   gem "rubocop"
+  gem "pry"
+  gem "pry-nav"
 end
 
 group :development do
