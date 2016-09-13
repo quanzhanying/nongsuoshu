@@ -1,4 +1,4 @@
-class Admin::BooksController < ApplicationController
+class Admin::BooksController < AdminController
   before_action :find_book_by_id, only: %i(edit update destroy publish hide)
   layout "admin"
 
