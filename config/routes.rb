@@ -33,6 +33,14 @@ Rails.application.routes.draw do
         post :pay_with_wechat
       end
     end
+
+      resources :users do
+        member do
+          get :change_password
+        end
+      end
+
+
   end
 
   root to: "books#index"
