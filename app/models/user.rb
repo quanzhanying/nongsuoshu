@@ -32,8 +32,8 @@ class User < ApplicationRecord
     is_admin
   end
 
-  def has_authority?
-    true
+  def valid_subscriber?
+    expired_at && expired_at > Time.zone.now
   end
 
   def add_subscription_date!(plan_date)
