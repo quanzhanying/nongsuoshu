@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Admin
+        <title>Nongsuoshu
         </title>
         <%= csrf_meta_tags %>
 
@@ -12,17 +12,11 @@
     <body>
 
         <div class="container">
-            <%= render "common/admin_navbar" %>
+            <%= render "common/navbar" %>
             <%= render "common/flashes" %>
             <div class="row" style=" padding-top:20px;">
-                <div class="col-md-2">
-                    <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
-                        <li><%= active_link_to("Books", admin_books_path , :active => :inclusive, :wrap_tag => :li ) %></li>
-                    </ul>
 
-                </div>
-
-                <div class="col-md-10">
+                <div class="col-md-12">
                     <%= render_breadcrumb %>
                     <%= yield %>
                 </div>
