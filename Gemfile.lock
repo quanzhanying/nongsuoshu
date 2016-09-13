@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: https://gems.ruby-china.org/
   specs:
     aasm (4.11.0)
     actioncable (5.0.0.1)
@@ -72,6 +72,7 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.7.0)
+    fastest-csv (0.0.4)
     ffi (1.9.14)
     font-awesome-rails (4.6.3.1)
       railties (>= 3.2, < 5.1)
@@ -221,6 +222,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   devise
+  fastest-csv
   font-awesome-rails
   jbuilder (~> 2.5)
   jquery-rails
