@@ -5,3 +5,28 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts "创建一个 admin 账户, admin创建 5 个项目，每个项目 3 个回报，每个回报 1 笔订单，每笔订单 1 条流水。
+4 个 user 账户，每个user创建1个项目，每个项目3个回报，每个回报1笔订单，每笔订单1条流水。
+共6 种分类。"
+
+User.create([email: "admin@gmail.com", password: "111111", password_confirmation: "111111", is_admin: "true"])
+puts "Admin account created."
+
+create_users = for i in 1..3 do
+                 User.create([email: "user#{i}@gmail.com", password: "111111", password_confirmation: "111111", is_admin: "false", user_name: "user#{i}"])
+end
+
+User.create([email: "user4@gmail.com", password: "111111", password_confirmation: "111111", is_admin: "false", user_name: "许昕"])
+
+puts "4 Users' accounts created."
+
+# 共5个用户，1个admin
+Category.create!([name: "video", chs_name: "影视"])
+Category.create!([name: "music", chs_name: "音乐"])
+Category.create!([name: "writing", chs_name: "写作"])
+Category.create!([name: "science", chs_name: "科学"])
+Category.create!([name: "technology", chs_name: "技术"])
+Category.create!([name: "Painting", chs_name: "绘画"])
+
+puts "6 Categories created."
