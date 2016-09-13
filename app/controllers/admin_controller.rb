@@ -5,7 +5,7 @@ class AdminController < ApplicationController
   layout "admin"
 
   def set_breadcrumbs
-    @breadcrumbs = [view_context.link_to("Admin", "/admin/courses")]
+    @breadcrumbs = [view_context.link_to("Admin", "/admin/books")]
   end
 
   def drop_breadcrumb(title = nil, url = nil)
