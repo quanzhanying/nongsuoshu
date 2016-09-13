@@ -32,10 +32,12 @@ Rails.application.routes.draw do
   end
 
   namespace :account do
+
     resources :orders do
       member do
         post :pay_with_alipay
         post :pay_with_wechat
+        get :not_valid_subscriber
       end
     end
 
@@ -44,7 +46,6 @@ Rails.application.routes.draw do
           get :change_password
         end
       end
-
 
   end
 
