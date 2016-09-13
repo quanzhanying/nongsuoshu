@@ -12,4 +12,18 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "lightbox-bootstrap";
+
+
+
+// Trix Form
+.formatted_content{
+  min-height: 150px;
+  margin-bottom: 15px;
+}
