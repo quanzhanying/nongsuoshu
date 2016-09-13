@@ -1,0 +1,13 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+              精选
+
+                    <span class="label more pull-right">更多...</span>
+    </div>
+    <div class="panel-body" id="freeBooks">
+
+        <%= render :partial => "book", :collection => Book.recent.limit(3), :as => :book %>
+
+
+    </div>
+</div>

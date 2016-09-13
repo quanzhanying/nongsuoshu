@@ -5,13 +5,16 @@
         </title>
         <%= csrf_meta_tags %>
 
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     </head>
 
     <body>
 
-        <div class="container">
+        <div class="container page-wrap">
             <%= render "common/navbar" %>
             <%= render "common/flashes" %>
             <div class="row" style=" padding-top:20px;">
@@ -24,7 +27,7 @@
         </div>
 
     </body>
-    <div class="container">
+    <div class="container site-footer">
         <%= render "common/footer" %>
     </div>
 

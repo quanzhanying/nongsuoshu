@@ -1,14 +1,56 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-10 col-md-offset-1">
 
-<p>
-  <strong>Title:</strong>
-  <%= @book.title %>
-</p>
+    <div class="row">
+        <div class="col-md-3">
+            <%= render_book_cover(@book, :thumb) %>
 
-<p>
-  <strong>Content:</strong>
-  <%= @book.content %>
-</p>
+        </div>
 
-<%#= link_to 'Edit', edit_book_path(@book) %> |
-<%#= link_to 'Back', books_path %>
+        <div class="col-md-9">
+            <h2>
+                <%= @book.title %>
+            </h2>
+            <dl class="">
+                <dt>
+                    作者:
+                    <%= @book.author_name %>
+
+                </dt>
+                <dt>
+                    译者：
+                    <%= @book.translater_name %></dt>
+                <dt>出版时间:
+               TBD</dt>
+                <dt>美亚评分:
+               TBD</dt>
+                <dt>用户打分:
+               TBD</dt>
+                <dt>阅读数:
+               TBD</dt>
+                <dt>评论数:
+               TBD</dt>
+
+                <dt>评论数:
+               TBD</dt>
+
+                <dt>亚马逊连结: TBD</dt>
+            </dl>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            正文
+        </div>
+        <div class="panel-body" id="freeBooks">
+            <h3>
+                内容摘要</h3>
+                <%= @book.preface %>
+                <hr>
+
+                <h3> 浓缩总结 </h3>
+                    <%= @book.content %>
+        </div>
+    </div>
+
+</div>
