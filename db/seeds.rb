@@ -6,9 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts "创建一个 admin 账户, admin创建 5 个项目，每个项目 3 个回报，每个回报 1 笔订单，每笔订单 1 条流水。
-4 个 user 账户，每个user创建1个项目，每个项目3个回报，每个回报1笔订单，每笔订单1条流水。
-共6 种分类。"
+puts "创建一个 admin 账户。"
 
 User.create([email: "admin@gmail.com", password: "111111", password_confirmation: "111111", is_admin: "true"])
 puts "Admin account created."

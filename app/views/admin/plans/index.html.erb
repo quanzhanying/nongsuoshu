@@ -1,1 +1,38 @@
-TBD
+<div class="pull-right">
+    <%= link_to("新增一个 Plan ", new_admin_plan_path, :class => "btn btn-default") %>
+</div>
+<br><br>
+
+<table class="table table-bordered">
+<thead>
+    <tr>
+        <td>#</td>
+        <td>Nanme</td>
+        <td>Price</td>
+        <td>Date</td>
+        <td>创建日期</td>
+    </tr>
+</thead>
+<tbody>
+    <% @plans.each do |plan| %>
+    <tr>
+
+      <td>
+          <%= plan.id %>
+      </td>
+
+      <td>
+          <%= plan.price %>
+      </td>
+
+      <td>
+          <%= plan.plan_date %>
+      </td>
+        <td>
+            <%= plan.created_at %>
+        </td>
+
+    </tr>
+    <% end %>
+</tbody>
+</table>
