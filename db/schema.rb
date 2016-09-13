@@ -27,6 +27,17 @@ ActiveRecord::Schema.define(version: 20160913113504) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "price"
+    t.integer  "plan_id"
+    t.boolean  "is_paid"
+    t.string   "payment_method"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "token"
+  end
+
   create_table "plans", force: :cascade do |t|
     t.string   "name"
     t.integer  "price"

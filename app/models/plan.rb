@@ -11,4 +11,9 @@
 #
 
 class Plan < ApplicationRecord
+  has_many :orders
+
+  def self.yearly_plan
+    Plan.first
+  end
 end
