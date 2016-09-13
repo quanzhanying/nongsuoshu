@@ -18,6 +18,7 @@
 #  is_admin               :true
 #  user_name              :string
 #  expired_at             :datetime
+#  is_paid                :boolean
 #
 # Indexes
 #
