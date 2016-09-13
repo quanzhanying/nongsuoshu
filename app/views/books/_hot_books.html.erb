@@ -1,92 +1,13 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        精选
-        <span class="label more pull-right">更多...</span>
+              精选
+
+                    <span class="label more pull-right">更多...</span>
     </div>
-    <div class="panel-body" id="books">
-        <div class="col-sm-4 shell">
-            <div class="header">
-                <h3>
-                    <a href="book/5785a7740e96887378f0a054/preview">
-                        扳回一城
-                    </a>
-                </h3>
-            </div>
-            <div class="book-image-wrapper">
-                <a class="thumbnail book-image" href="book/5785a7740e96887378f0a054/preview">
-                    <img alt="..." data-ignore="1" src="http://oaurkepr4.bkt.clouddn.com/71471a8b-d919-469d-a1a3-5e2e4530fb36.jpg">
-                </a>
-            </div>
-        </div>
-        <div class="col-sm-4 shell">
-            <div class="header">
-                <h3>
-                    <a href="book/57a15ee09f24b91a4c8ba9b2/preview">
-                        美丽的束缚
-                    </a>
-                </h3>
-            </div>
-            <div class="book-image-wrapper">
-                <a class="thumbnail book-image" href="book/57a15ee09f24b91a4c8ba9b2/preview">
-                    <img alt="..." data-ignore="1" src="http://oaurkepr4.bkt.clouddn.com/dfada527-92d8-4795-8492-c66820557fd0.jpg">
-                </a>
-            </div>
-        </div>
-        <div class="col-sm-4 shell">
-            <div class="header">
-                <h3>
-                    <a href="book/576e12f0f42b11dc634dab4a/preview">
-                        低效杀手
-                    </a>
-                </h3>
-            </div>
-            <div class="book-image-wrapper">
-                <a class="thumbnail book-image" href="book/576e12f0f42b11dc634dab4a/preview">
-                    <img alt="..." data-ignore="1" src="http://o3b126ie1.qnssl.com/cover/25136053-984b-423b-a1b2-037749b6d6ae">
-                </a>
-            </div>
-        </div>
-        <div class="col-sm-4 shell">
-            <div class="header">
-                <h3>
-                    <a href="book/5795789f3b8791294f9dde27/preview">
-                        鼓足干劲
-                    </a>
-                </h3>
-            </div>
-            <div class="book-image-wrapper">
-                <a class="thumbnail book-image" href="book/5795789f3b8791294f9dde27/preview">
-                    <img alt="..." data-ignore="1" src="http://o3b126ie1.qnssl.com/cover/f19d2c87-1785-4c57-8264-52751f281071">
-                </a>
-            </div>
-        </div>
-        <div class="col-sm-4 shell">
-            <div class="header">
-                <h3>
-                    <a href="book/57bc0e11c5c9ee6a32794da1/preview">
-                        加速度进入
-                    </a>
-                </h3>
-            </div>
-            <div class="book-image-wrapper">
-                <a class="thumbnail book-image" href="book/57bc0e11c5c9ee6a32794da1/preview">
-                    <img alt="..." data-ignore="1" src="http://o3b126ie1.qnssl.com/cover/9f8d5bd4-9406-43b8-ba65-046cde1a7e7b">
-                </a>
-            </div>
-        </div>
-        <div class="col-sm-4 shell">
-            <div class="header">
-                <h3>
-                    <a href="book/57bc0e11c5c9ee6a32794da4/preview">
-                        账目作假
-                    </a>
-                </h3>
-            </div>
-            <div class="book-image-wrapper">
-                <a class="thumbnail book-image" href="book/57bc0e11c5c9ee6a32794da4/preview">
-                    <img alt="..." data-ignore="1" src="http://o3b126ie1.qnssl.com/cover/0376ebaa-f38b-4d27-858d-e1db87ad6c4a">
-                </a>
-            </div>
-        </div>
+    <div class="panel-body" id="freeBooks">
+
+        <%= render :partial => "book", :collection => Book.recent.limit(3), :as => :book %>
+
+
     </div>
 </div>

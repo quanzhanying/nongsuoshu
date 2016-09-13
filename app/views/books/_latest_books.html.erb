@@ -1,92 +1,13 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        最新
-        <span class="label more pull-right">更多...</span>
+            最新
+
+                    <span class="label more pull-right">更多...</span>
     </div>
-    <div class="panel-body" id="books">
-        <div class="col-sm-4 shell">
-            <div class="header">
-                <h3>
-                    <a href="book/57d77830251a958a702639be/preview">
-                        小行动，大改变
-                    </a>
-                </h3>
-            </div>
-            <div class="book-image-wrapper">
-                <a class="thumbnail book-image" href="book/57d77830251a958a702639be/preview">
-                    <img alt="..." data-ignore="1" src="http://oaurkepr4.bkt.clouddn.com/0d847878-5d3f-44f4-8afe-dbccc203ebf6.jpg">
-                </a>
-            </div>
-        </div>
-        <div class="col-sm-4 shell">
-            <div class="header">
-                <h3>
-                    <a href="book/57d60e82a2f188b24647299c/preview">
-                        优胜者
-                    </a>
-                </h3>
-            </div>
-            <div class="book-image-wrapper">
-                <a class="thumbnail book-image" href="book/57d60e82a2f188b24647299c/preview">
-                    <img alt="..." data-ignore="1" src="http://oaurkepr4.bkt.clouddn.com/e45a67ea-f0fb-4f77-9ede-b282321648e1.jpg">
-                </a>
-            </div>
-        </div>
-        <div class="col-sm-4 shell">
-            <div class="header">
-                <h3>
-                    <a href="book/57d227d02c93ad27062b15a2/preview">
-                        广告吸引法则
-                    </a>
-                </h3>
-            </div>
-            <div class="book-image-wrapper">
-                <a class="thumbnail book-image" href="book/57d227d02c93ad27062b15a2/preview">
-                    <img alt="..." data-ignore="1" src="http://oaurkepr4.bkt.clouddn.com/9c7efa48-e9a0-431f-9186-eef60c80e570.jpg">
-                </a>
-            </div>
-        </div>
-        <div class="col-sm-4 shell">
-            <div class="header">
-                <h3>
-                    <a href="book/57d2221a2c93ad27062b15a0/preview">
-                        创新思维四棱镜
-                    </a>
-                </h3>
-            </div>
-            <div class="book-image-wrapper">
-                <a class="thumbnail book-image" href="book/57d2221a2c93ad27062b15a0/preview">
-                    <img alt="..." data-ignore="1" src="http://oaurkepr4.bkt.clouddn.com/844b235f-1c74-4595-bedf-57790c1b7618.jpg">
-                </a>
-            </div>
-        </div>
-        <div class="col-sm-4 shell">
-            <div class="header">
-                <h3>
-                    <a href="book/57d21c4e2c93ad27062b159f/preview">
-                        远不止销售过程
-                    </a>
-                </h3>
-            </div>
-            <div class="book-image-wrapper">
-                <a class="thumbnail book-image" href="book/57d21c4e2c93ad27062b159f/preview">
-                    <img alt="..." data-ignore="1" src="http://oaurkepr4.bkt.clouddn.com/d6e78cdc-7f6e-4c7f-bb71-e1a1b48c6c30.jpg">
-                </a>
-            </div>
-        </div>
-        <div class="col-sm-4 shell">
-            <div class="header">
-                <h3>
-                    <a href="book/57d0cbc32c93ad27062b159e/preview">
-                        建立学习型公司
-                    </a>
-                </h3>
-            </div>
-            <div class="book-image-wrapper">
-                <a class="thumbnail book-image" href="book/57d0cbc32c93ad27062b159e/preview">
-                    <img alt="..." data-ignore="1" src="http://oaurkepr4.bkt.clouddn.com/a010660c-3261-43da-b7d2-b1f9490e961f.jpg">
-                </a>
-            </div>
-        </div>
+    <div class="panel-body" id="freeBooks">
+
+        <%= render :partial => "book", :collection => Book.recent.limit(3), :as => :book %>
+
+
     </div>
 </div>
