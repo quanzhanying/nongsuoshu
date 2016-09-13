@@ -22,6 +22,8 @@ class BooksController < ApplicationController
     if current_user && !current_user.valid_subscriber?
       @book.content = view_context.truncate(@book.content, length: 140)
     end
+
+    set_page_title @book.title
     drop_breadcrumb(@book.title, book_path(@book))
   end
 
