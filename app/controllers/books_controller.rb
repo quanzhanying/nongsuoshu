@@ -94,7 +94,7 @@ class BooksController < ApplicationController
   end
 
   def search_criteria(query_string)
-    { title_cont: query_string, content_cont: query_string, m: "or" }
+    { title_cont: query_string}
   end
 
   private

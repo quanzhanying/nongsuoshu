@@ -1,10 +1,15 @@
 
 
-<div class="col-md-6 col-lg-6">
-  <a class="search-book-container" href="/books/<%= book.id %>">
-    <div class="thumb">
-      <img src="/images/book1.jpg" alt="even">
-    </div>
+<div class="col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+  <div class="col-md-2 col-lg-2">
+    <a class="search-book-container" href="/books/<%= book.id %>">
+      <div class="thumb">
+        <img src="/images/book1.jpg" alt="even">
+      </div>
+      <!-- <hr class="style-two"> -->
+    </a>
+  </div>
+  <div class="col-md-8 col-lg-8 book-info-out">
     <div class="search-book-info">
       <p>书名：<%= render_highlight_title(book, @query_string) %></p>
       <p>作者: <%= book.author_name %></p>
@@ -12,5 +17,5 @@
       <p>美亚评分: TODO</p>
       <p>阅读数: TODO</p>
     </div>
-  </a>
+  </div>
 </div>
