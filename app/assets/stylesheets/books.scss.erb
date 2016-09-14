@@ -129,17 +129,85 @@ body {
 }
 // index banner
 
-// index tab
+// config navtab
+
 .section{
-.panel {
-  margin-bottom: 20px;
-  background-color: transparent;
-  border: 0 ;
-  border-radius: 4px;
-  -webkit-box-shadow: none ;
-          box-shadow: none ;
+  .panel {
+    margin-bottom: 20px;
+    background-color: transparent;
+    border: 0 ;
+    border-radius: 4px;
+    -webkit-box-shadow: none ;
+            box-shadow: none ;
+  }
+  .nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
+  .nav > li {
+    position: relative;
+    display: block;
+    // 每个标签的底部都会有border，但选中状态的会高出3px；
+    // border-bottom: 3px solid #eb1478;
+  }
+  .nav > li > a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+  }
+  .nav > li > a:hover,
+  .nav > li > a:focus {
+    text-decoration: none;
+    // 去掉悬停背景色；
+    background-color: transparent;
+  }
+  .nav-tabs {
+    // 标签条下方border
+    border-bottom: 3px solid #9bcdf0;
+    // border-bottom: none;
+
+  }
+  .nav-tabs > li {
+    float: left;
+    // 悬停标签下方颜色条为－3px，和选中状态的标签在同一水平线
+    margin-bottom: -3px;
+
+  }
+  .nav-tabs > li > a {
+    // 去掉每个标签之间的右边距
+    margin-right:0;
+    line-height: 1.42857143;
+    // 去掉默认边框
+    border: 0;
+    // 去掉上边和右边的圆角
+    border-radius: 0;
+    //定义链接文字样式
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.3em;
+    // 非选中状态的底部border为透明色
+    border-bottom: 3px solid transparent;
+
+  }
+  .nav-tabs > li > a:hover {
+    // 鼠标选中状态的board颜色
+    border-color: #51a8e4;
+  }
+  .nav-tabs > li.active > a,
+  .nav-tabs > li.active > a:hover,
+  .nav-tabs > li.active > a:focus {
+    cursor: default;
+    background-color: transparent;
+    // 定义选中状态的标签
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    // 把border的底部显示出来
+    border-bottom: 3px solid #2089d2;
+  }
 }
-}
-// index tab
+// config navtab end
 
 // config by nfreeness end
