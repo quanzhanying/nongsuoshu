@@ -115,4 +115,16 @@ img{
   a:active {color: #43cb83};
 
 }
-// congi navbar end
+
+
+// body background set white
+.body-bg{
+  background-color: white;
+  box-shadow: 2px 2px 5px rgba(black, .1);
+  height: 100%;
+}
+
+// remove navebar default margin bottome
+.navbar{
+  margin-bottom: 0;
+}
