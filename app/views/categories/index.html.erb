@@ -1,50 +1,30 @@
-<p id="notice"><%= notice %></p>
+
 
 <!-- Page Content -->
-<div class="container">
 
-    <div class="row">
-
-        <div class="col-md-3">
-            <p class="lead">按分类查找你喜欢的内容</p>
-            <div class="list-group">
-              <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
-                  <li><%= active_link_to("全部", categories_path , :active => :exclusive, :wrap_tag => :li ) %></li>
-                  <% @categories.each do |category| %>
-                  <li><%= active_link_to(category.chs_name, category_path(category) , :active => :exclusive, :wrap_tag => :li ) %></li>
-                  <% end %>
-              </ul>
+<div class="row">
+    <% @books.each do |book| %>
+    <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="book-block">
+            <div class="caption">
+                <h4><%= render_book_title(book) %></h4>
             </div>
-        </div>
 
-        <div class="col-md-9">
+            <div class="book-image-wrapper">
 
-            <div class="row">
-                <% @books.each do |book| %>
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="book-block">
-                      <div class="caption">
-                          <h4><%= render_book_title(book) %></h4>
-                      </div>
+                <%= render_book_cover(book) %>
 
-                      <div class="book-image-wrapper">
-
-                        <%= render_book_cover(book) %>
-
-                      </div>
-
-                    </div>
-                </div>
-                <% end %>
-
-            </div>
-            <div class="text-center">
-                <%= will_paginate @books %>
             </div>
 
         </div>
-
     </div>
+    <% end %>
 
 </div>
+<div class="text-center">
+    <%= will_paginate @books %>
+</div>
+
+
+
 <!-- /.container -->
