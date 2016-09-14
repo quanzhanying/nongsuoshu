@@ -65,9 +65,3 @@ end
 #
 #  index_books_on_aasm_state  (aasm_state)
 #
-
-#
-# Indexes
-#
-#  index_books_on_aasm_state  (aasm_state)
-#

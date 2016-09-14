@@ -32,10 +32,7 @@
 #  is_free           :boolean          default(FALSE)
 #  is_editor_choice  :boolean          default(FALSE)
 #
-# Indexes
-#
-#  index_books_on_aasm_state  (aasm_state)
-#
+
 
 require 'test_helper'
 

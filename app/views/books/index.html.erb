@@ -5,11 +5,36 @@
   </div>
 </div>
 
-
 <div class="container">
-    <div class="col-sm-10 col-sm-offset-1 shell-panel">
-        <%= render :partial => "books/free_books" %>
-        <%= render :partial => "books/hot_books" %>
-        <%= render :partial => "books/latest_books" %>
-  </div>
+      <div class="col-md-10 col-md-offset-1">
+                <div class="panel panel-default">
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#hot" data-toggle="tab">精选</a>
+                            </li>
+                            <li><a href="#latest" data-toggle="tab">最新</a>
+                            </li>
+                            <li><a href="#free" data-toggle="tab">免费阅读</a>
+                            </li>
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active" id="hot">
+                              <%= render :partial => "books/hot_books" %>
+                            </div>
+                            <div class="tab-pane fade" id="latest">
+                              <%= render :partial => "books/latest_books" %>
+                            </div>
+                            <div class="tab-pane fade" id="free">
+                              <%= render :partial => "books/free_books" %>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+              </div>
 </div>
