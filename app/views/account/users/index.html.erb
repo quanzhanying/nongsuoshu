@@ -21,15 +21,14 @@
         <tr>
           <td >年费会员</td>
           <td>
-
-              <%   if current_user && current_user.valid_subscriber?%>
-                是 （<%= @user.expired_at%>到期）
-              <% else %>
-                否
-                <td>
-                  <%= link_to("成为会员", plans_path, class:"btn btn-sm btn-default") %>
-                </td>
-              <% end %>
+            <% if current_user && current_user.valid_subscriber?%>
+              是 （<%= @user.expired_at%>到期）
+            <% else %>
+              否
+              <td>
+                <%= link_to("成为会员", plans_path, class:"btn btn-sm btn-default") %>
+              </td>
+            <% end %>
           </td>
         </tr>
         <tr>
