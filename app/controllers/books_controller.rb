@@ -26,10 +26,10 @@ class BooksController < ApplicationController
       @book.content = view_context.truncate(@book.content, length: 140)
       @is_valid_subscriber = false
     end
-    # unless @is_valid_subscriber
-    #   render "preview"
-    #   return
-    # end
+    unless @is_valid_subscriber
+      render "preview"
+      return
+    end
 
     set_page_title @book.title
     drop_breadcrumb(@book.title, book_path(@book))
