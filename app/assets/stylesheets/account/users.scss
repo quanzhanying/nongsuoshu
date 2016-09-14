@@ -46,3 +46,46 @@
 .notice-default>strong {
     color: #7F7F84;
 }
+
+.sidebar-bg{
+  padding: 30px 15px 10px 15px;
+  h2{
+  color:#0099ff; /*蓝色*/
+  font-size: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+    a {
+      color:#0099ff;
+    }
+  }
+
+  h3{
+    color:#4b5055;
+    font-size: 15px;
+    padding-left: 15px;
+    line-height: 25px;
+      a {
+        color:#4b5055;
+      }
+      a:hover{
+        color:#0099ff;
+        text-decoration : none;
+      }
+      a.active{
+        color:#0099ff;
+      }
+
+  }
+}
+
+.user-wrap-main{
+  padding: 30px 30px 30px 20px;
+  color:#4b5055;
+  h1 {
+    font-size: 24px;
+  }
+  .blue-text {
+    color:#0099ff; /*blue*/
+  }
+
+}
