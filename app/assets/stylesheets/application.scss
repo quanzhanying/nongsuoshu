@@ -20,7 +20,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "search_bar";
-@import "main";
 @import "font-awesome";
 
 
@@ -28,4 +27,56 @@
 .formatted_content{
   min-height: 150px;
   margin-bottom: 15px;
+}
+
+
+.def-footer{
+  position:relative;
+  .help-link{
+    float:left;
+    margin:0 40px;
+    li{
+    padding:0 10px;
+    }
+  }
+
+  .copyright-info{
+    float:left;
+    margin:0 40px;
+  }
+}
+
+
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+
+
+  line-height: 1.8em;
+  letter-spacing: 0.1em;
+
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -70px;
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  height: 70px;
+}
+.site-footer {
+  background: #323232;
+    color: #ffffff;
+  padding-top: 20px;
+
+  a:link {color: #CCCCCC};
+a:visited {color: #CCCCCC}	;
+a:hover {color: #FFFFFF}	;
+a:active {color: #FFFFFF};
 }

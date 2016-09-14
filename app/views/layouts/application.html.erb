@@ -15,10 +15,13 @@
             <%= render "common/flashes" %>
              <%# render_breadcrumb %>
             <%= yield %>
+
         </div>
-        <div class="site-footer">
-            <%= render "common/footer" %>
+
+        <div class="site-footer"
+          <%= render "common/footer" %>
         </div>
+
             <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
             <%= yield :javascripts %>
     </body>
