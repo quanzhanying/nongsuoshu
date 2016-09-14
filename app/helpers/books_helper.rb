@@ -42,4 +42,14 @@ module BooksHelper
   def render_book_introduction(book)
     truncate(sanitize(book.introduction), escape: false, length: 160)
   end
+
+  def render_book_content_for_display(book)
+    unless current_user
+      return truncate(strip_tags(book.content), length: 250)
+    end
+    if current_user && !current_user.valid_subscriber?
+      return truncate(strip_tags(book.content), length: 250)
+    end
+    book.content.html_safe
+  end
 end
