@@ -1,3 +1,41 @@
+class Book < ApplicationRecord
+  scope :recent, -> { order("created_at DESC") }
+  scope :free, -> { where(is_free: true) }
+  scope :editor_choice, -> { where(is_editor_choice: true) }
+
+  validates :title, presence: true
+  validates :content, presence: true
+  belongs_to :category
+
+  has_many :favorites_relationships
+  has_many :book_fans, through: :favorites_relationships, source: :user
+
+
+  before_create :generate_token
+
+  def generate_token
+    self.token = SecureRandom.uuid
+  end
+
+
+
+  include AASM
+
+  aasm do
+    state :book_created, initial: true
+    state :online
+    state :offline
+
+    event :publish do
+      transitions from: :book_created, to: :online
+    end
+
+    event :hide do
+      transitions from: :online, to: :offline
+    end
+  end
+end
+
 # == Schema Information
 #
 # Table name: books
@@ -21,6 +59,7 @@
 #  is_free           :boolean          default(FALSE)
 #  is_editor_choice  :boolean          default(FALSE)
 #  token             :string
+#  cover_image_link  :string
 #
 # Indexes
 #
@@ -32,35 +71,3 @@
 #
 #  index_books_on_aasm_state  (aasm_state)
 #
-
-class Book < ApplicationRecord
-  scope :recent, -> { order("created_at DESC") }
-  scope :free, -> { where(is_free: true) }
-  scope :editor_choice, -> { where(is_editor_choice: true) }
-
-  validates :title, presence: true
-  validates :content, presence: true
-  belongs_to :category
-
-  before_create :generate_token
-
-  def generate_token
-    self.token = SecureRandom.uuid
-  end
-
-  include AASM
-
-  aasm do
-    state :book_created, initial: true
-    state :online
-    state :offline
-
-    event :publish do
-      transitions from: :book_created, to: :online
-    end
-
-    event :hide do
-      transitions from: :online, to: :offline
-    end
-  end
-end

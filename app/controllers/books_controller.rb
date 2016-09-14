@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   before_action :set_book, only: %i(show edit update destroy)
   before_action :validate_search_key, only: [:search]
+  before_action :authenticate_user!, only: [:add_to_favorites, :remove_favorites] 
   # GET /books
   # GET /books.json
   def index
@@ -85,6 +86,37 @@ class BooksController < ApplicationController
       @books_search = search_result.paginate(page: params[:page], per_page: 3)
     end
   end
+
+
+
+  def add_to_favorites
+    @book = Book.find(params[:id])
+
+    if !current_user.has_added_to_favorites?(@book)
+      current_user.add_to_favorites!(@book)
+      flash[:notice] = "加入收藏成功"
+    else
+      flashl[:warning] = "已经收藏过了哦"
+    end
+    redirect_to :back
+  end
+
+
+  def remove_favorites
+    @book = Book.find(params[:id])
+    if current_user.has_added_to_favorites?(@book)
+      current_user.remove_favorites!(@book)
+      flash[:notice] = "已取消收藏"
+    else
+      flash[:warning] = "还未收藏，不可取消收藏哦"
+    end
+    redirect_to :back
+  end
+
+
+
+
+
 
   protected
 
