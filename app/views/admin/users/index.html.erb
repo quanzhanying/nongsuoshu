@@ -9,6 +9,9 @@
     <th>ID</th>
     <th>用户名</th>
     <th>邮箱地址</th>
+    <th>
+      状态
+    </th>
     <th>操作</th>
   </thead>
   <tbody>
@@ -22,6 +25,9 @@
     </td>
     <td>
       <%= user.email %>
+    </td>
+    <td>
+      <%= render_user_status(user)  %>
     </td>
     <td>
       <%= link_to("编辑用户信息", edit_admin_user_path(user), :class => "btn btn-sm btn-default") %>
