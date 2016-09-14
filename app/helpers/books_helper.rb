@@ -42,4 +42,8 @@ module BooksHelper
   def render_book_introduction(book)
     truncate(sanitize(book.introduction), escape: false, length: 160)
   end
+
+  def render_book_content(book)
+    sanitize(CGI::unescapeHTML book.content)
+  end
 end

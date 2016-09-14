@@ -35,7 +35,7 @@
           <h2><%= @book.title %></h2>
         </div>
         <div class="content">
-          <%= (CGI::unescapeHTML @book.content).html_safe %>
+          <%=render_book_content(@book) %>
         </div>
     </div>
   </div>
