@@ -39,7 +39,7 @@
           <%= (CGI::unescapeHTML @book.content).html_safe %>
           <% unless @is_valid_subscriber %>
             <div class="buy-plan text-center">
-              <%= link_to("购买会员", new_order_path(), target:"_blank", class: "btn btn-success") %>
+              <%= link_to("购买会员", new_order_path(), target:"_blank", class: "lp-action btn sm") %>
             </div>
           <% end %>
 
