@@ -1,15 +1,13 @@
 <div class="row book-row">
   <div class="col-md-12 col-lg-12">
-    <div class="col-md-2 col-lg-2">
+    <div class="col-md-2 col-md-offset-1 col-lg-2">
       <a class="search-book-container" href="/books/<%= @book.token %>">
         <div class="thumb">
           <%= render_book_cover_image_link(@book,:thumb) %>
         </div>
-        <!-- <hr class="style-two"> -->
+        <hr class="style-two">
       </a>
-    </div>
-    <div class="col-md-8 col-lg-8 book-info-out" bookId="<%= @book.token %>">
-      <div class="search-book-info">
+      <div class="search-book-info" bookId="<%= @book.token %>">
         <p>书名：<%= render_book_title(@book) %></p>
         <p>作者: <%= @book.author_name %></p>
         <p>译者: <%= @book.translater_name %></p>
@@ -17,19 +15,41 @@
         <p>美亚评分: TODO</p>
         <p>阅读数: TODO</p>
       </div>
+    </div>
+
+    <div class="col-md-8 col-lg-8 book-info-out">
+      <h3 class="book-introduction">内容简介</h3>
       <div class="book-short-content">
-        <p>
+
+        <p bookId="<%= @book.token %>">
           <%= render_book_introduction(@book) %>
         </p>
+
+        <div class="buy-plan">
+          <%= link_to("开通会员免费阅读全文", new_order_path(), target:"_blank", class: "btn btn-success") %>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
+<hr class="style-six">
+
+<h3>猜你喜欢</h3>
+
+<div class="row book-row">
+  <%= render partial:"recommend", collection: @books, as: "book" %>
+</div>
+
+
 <% content_for :javascripts do %>
   <script>
     $(function() {
-      $(".book-info-out").click(function () {
+      $(".search-book-info").click(function () {
+        var url = "/books/" + $(this).attr("bookId") + "/";
+        window.open(url)
+      });
+      $(".book-short-content > p").click(function () {
         var url = "/books/" + $(this).attr("bookId") + "/";
         window.open(url)
       });
