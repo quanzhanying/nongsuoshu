@@ -39,6 +39,7 @@ gem "ransack"
 gem "aasm"
 gem "awesome_rails_console"
 gem "htmlentities"
+gem "nokogiri"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

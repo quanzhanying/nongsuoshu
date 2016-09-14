@@ -43,7 +43,11 @@ module BooksHelper
     truncate(sanitize(book.introduction), escape: false, length: 160)
   end
 
-  def render_book_content(book)
-    sanitize(CGI::unescapeHTML book.content)
+  def render_book_content_for_display(book)
+    if book.can_display_for_user(current_user)
+      book.content.html_safe
+    else
+      truncate(strip_tags(book.content), length: 250)
+    end
   end
 end

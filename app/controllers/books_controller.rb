@@ -17,15 +17,13 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
-
     rand_num = rand(10) + 1
     @books = Book.recommend(rand_num)
-    free_to_read?(@book)
-    unless @is_valid_subscriber
-      render "preview"
+    unless @book.can_display_for_user(current_user)
+      render :preview
       return
     end
-
+    
     set_page_title @book.title
     drop_breadcrumb(@book.title, book_path(@book))
   end
@@ -87,8 +85,6 @@ class BooksController < ApplicationController
     end
   end
 
-
-
   def add_to_favorites
     message = {}
     unless current_user
@@ -105,7 +101,6 @@ class BooksController < ApplicationController
     render json: message
   end
 
-
   def remove_favorites
     message = {}
     unless current_user
@@ -121,11 +116,6 @@ class BooksController < ApplicationController
     end
     render json: message
   end
-
-
-
-
-
 
   protected
 
@@ -148,7 +138,7 @@ class BooksController < ApplicationController
   end
 
   def search_criteria(query_string)
-    { title_cont: query_string}
+    { title_cont: query_string }
   end
 
   private

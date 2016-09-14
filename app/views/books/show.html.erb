@@ -29,20 +29,17 @@
       </div>
     </div>
 
-
     <div class="col-md-8 col-lg-8 book-content">
         <div class="header">
           <h2><%= @book.title %></h2>
         </div>
         <div class="content">
-          <%=render_book_content(@book) %>
+          <%=render_book_content_for_display(@book) %>
         </div>
     </div>
   </div>
 
   <br/>
-
-
 
   <div class="row book-row">
     <h3>猜你喜欢</h3>
