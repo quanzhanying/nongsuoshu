@@ -20,12 +20,16 @@ User.create([email: "user4@gmail.com", password: "111111", password_confirmation
 puts "4 Users' accounts created."
 
 require "csv"
-CSV.foreach("doc/book_sample.csv") do |row|
+CSV.foreach("import/condensed_book.csv") do |row|
   Book.create(
-    title: row[0],
-    content: row[1],
-    is_free: row[2],
-    is_editor_choice: row[3]
+    token: row[0],
+    title: row[3],
+    author_name: row[4],
+    introduction: row[6],
+    content: row[7],
+    is_free: Random.new(1),
+    is_editor_choice: Random.new(1),
+    published_date:     row[8]
   )
 end
 
