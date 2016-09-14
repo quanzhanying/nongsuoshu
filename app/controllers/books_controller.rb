@@ -12,8 +12,6 @@ class BooksController < ApplicationController
         @books = Book.all.paginate(page: params[:page], per_page: 3)
       end
     @categories = Category.all
-    @book = @books.each do |book|
-    end
   end
 
   # GET /books/1
