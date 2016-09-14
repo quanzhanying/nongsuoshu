@@ -28,3 +28,20 @@
   min-height: 150px;
   margin-bottom: 15px;
 }
+
+
+#footer {
+  background: #323232;
+  color: #ffffff;
+  bottom: 0;
+  height: 100px;
+  position: absolute;
+  width: 100%;
+  min-width: 1200px;
+  margin-top: 20px;
+  padding-top: 20px;
+  a:link {color: #CCCCCC};
+  a:visited {color: #CCCCCC}	;
+  a:hover {color: #FFFFFF}	;
+  a:active {color: #FFFFFF};
+}
