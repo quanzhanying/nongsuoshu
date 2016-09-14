@@ -11,6 +11,10 @@ Rails.application.routes.draw do
     collection do
       get :search
     end
+    member do
+      post :add_to_favorites
+      post :remove_favorites
+    end
   end
 
   namespace :admin do
@@ -47,12 +51,6 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :favorites do
-      member do
-        post :add
-        post :delete
-      end
-    end
   end
 
   get "/how_it_works", to: "welcome#how_it_works"

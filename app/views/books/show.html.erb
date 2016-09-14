@@ -10,6 +10,14 @@
           <h3><%= render_book_title(@book) %></h3>
           <span class="operate">
             <%= link_to("收藏", account_users_path) %>
+
+            <% if current_user && current_user.has_added_to_favorites?(@book) %>
+               <%= link_to("取消收藏", remove_favorites_book_path(@book), method: :post, class: "btn btn-default") %>
+             <% else %>
+               <%= link_to("收藏", add_to_favorites_book_path(@book), method: :post, class: "btn btn-default") %>
+             <% end %>
+
+
             <i class="fa fa-heart-o" aria-hidden="true"></i>
             <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
           </span>

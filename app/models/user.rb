@@ -9,10 +9,18 @@ class User < ApplicationRecord
   has_many :favorites_relationships
   has_many :favorite_books, through: :favorites_relationships, source: :book
 
-  def has_added_to_favorite?(book)
+  def has_added_to_favorites?(book)
     favorite_books.include?(book)
   end
-  
+
+  def add_to_favorites!(book)
+    favorite_books << book
+  end
+
+  def remove_favorites!(book)
+    favorite_books.delete(book)
+  end
+
   def admin?
     is_admin
   end
