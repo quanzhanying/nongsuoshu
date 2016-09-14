@@ -6,8 +6,8 @@ module BooksHelper
   end
 
   def render_highlight_title(book, query_string)
-    excerpt_cont = excerpt(book.title, query_string, radius: 500)
-    highlight(excerpt_cont, query_string)
+    excerpt_cont = excerpt(book.title, query_string, radius: 5000)
+    highlight(excerpt_cont, query_string, highlighter: '<mark style="background-color:yellow;"><strong>\1</strong></mark>')
   end
 
   def render_highlight_content(book, query_string)
@@ -34,4 +34,9 @@ module BooksHelper
       image_tag(book.cover_image_link, size: "330x500")
    end
   end
+
+  def render_book_introduction(book)
+    truncate(sanitize(book.introduction), escape: false, length: 160)
+  end
+
 end

@@ -1,0 +1,95 @@
+// Place all the styles related to the books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.search-book-container {
+  display: block;
+  color: #606060;
+  text-decoration: none;
+  width: 200px;
+  height: auto;
+  background-color: #fff;
+  padding-bottom: 25px;
+}
+
+
+.search-book-container:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.book-short-content {
+  // display: inline;
+  padding-top: 55px;
+  // margin: 0 auto;
+  width: 500px;
+  height: 241px;
+  float: left;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.book-short-content > p {
+  line-height: 30px;
+}
+
+.book-short-content > p::before {
+  content: "";
+  background: url(quote.png) no-repeat;
+  display: block;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top: 20px;
+  left: 215px;
+}
+
+
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.book-info-out {
+  background-color: #fff;
+  width: 400px;
+  height: 245px;
+  margin-left: 40px;
+}
+
+.search-book-info {
+  padding: 15px;
+  height: auto;
+  text-align: left;
+  width: 200px;
+  float: left;
+}
+.search-book-info > p {
+  color: #666;
+}
+
+.search-book-container .thumb {
+    width: 130px;
+    padding-top: 20px;
+    margin: 0 auto;
+}
+
+.search-book-container .thumb img {
+    width: 130px;
+    height: 200px;
+}
+
+.search-view {
+  margin-top: 30px;
+}
+
+.book-row {
+  margin-bottom: 15px;
+}
+
+mark {
+    background-color: yellow;
+    // color: black;
+}

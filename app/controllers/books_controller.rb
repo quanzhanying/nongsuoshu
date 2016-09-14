@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   before_action :set_book, only: %i(show edit update destroy)
   before_action :validate_search_key, only: [:search]
+  before_action :authenticate_user!, only: [:add_to_favorites, :remove_favorites] 
   # GET /books
   # GET /books.json
   def index
@@ -125,7 +126,7 @@ class BooksController < ApplicationController
   end
 
   def search_criteria(query_string)
-    { title_cont: query_string, content_cont: query_string, m: "or" }
+    { title_cont: query_string}
   end
 
   private
