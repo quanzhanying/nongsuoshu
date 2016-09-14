@@ -1,3 +1,4 @@
+<div class="col-md-10 col-md-offset-1">
 <div class="row book-row">
   <div class="col-md-12 col-lg-12">
     <div class="col-md-2 col-md-offset-1 col-lg-2">
@@ -12,8 +13,10 @@
         <p>作者: <%= @book.author_name %></p>
         <p>译者: <%= @book.translater_name %></p>
         <p>出版时间: <%= @book.published_date %></p>
-        <p>美亚评分: TODO</p>
+        <p>美亚评分: <%=  @book.rating_from_ma  %> </p>
         <p>阅读数: TODO</p>
+        <p>评论数: <%= @book.comments_count %> </p>
+        <p>亚马逊连结: <%= render_amazon_link(@book) %> </p>
       </div>
     </div>
 
@@ -35,13 +38,13 @@
 
 <hr class="style-six">
 
-<h3>猜你喜欢</h3>
 
 <div class="row book-row">
+  <h3>猜你喜欢</h3>
   <%= render partial:"recommend", collection: @books, as: "book" %>
 </div>
 
-
+</div>
 <% content_for :javascripts do %>
   <script>
     $(function() {

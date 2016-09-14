@@ -42,4 +42,16 @@ module BooksHelper
   def render_book_introduction(book)
     truncate(sanitize(book.introduction), escape: false, length: 160)
   end
+
+  def render_book_content_for_display(book)
+    if book.can_display_for_user(current_user)
+      book.content.html_safe
+    else
+      truncate(strip_tags(book.content), length: 250)
+    end
+  end
+
+  def render_amazon_link(book)
+    link_to("去亚马逊购买", book.amazon_link, class:"btn btn-default", target:"_blank")
+  end
 end

@@ -28,7 +28,7 @@ CSV.foreach("import/condensed_book.csv") do |row|
     rescue
       nil
     end
-  Book.create(
+  b = Book.create(
 
     old_book_id: row[0],
     created_at: row[1],
@@ -46,6 +46,8 @@ CSV.foreach("import/condensed_book.csv") do |row|
     category_id:3
 
   )
+
+  b.extract_amazon_link!
 end
 
 puts "books create."
