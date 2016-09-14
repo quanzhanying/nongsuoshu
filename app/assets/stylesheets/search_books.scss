@@ -67,6 +67,10 @@ hr.style-six {
   padding: 60px 100px 100px 100px;
 }
 
+.book-info-out h3 {
+  margin-top: -30px;
+}
+
 .book-info-out:hover {
   cursor: pointer;
 }
@@ -106,6 +110,11 @@ hr.style-six {
 .recommend {
   margin-left: 85px;
   margin-bottom: 15px;
+}
+
+.recommend p {
+  text-align: center;
+  margin-top: 15px;
 }
 
 
