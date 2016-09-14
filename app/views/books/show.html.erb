@@ -4,7 +4,8 @@
     <div class="col-md-2 col-md-offset-1 col-lg-2 book-side-content">
       <div class="book-side">
         <div class="thumb">
-          <img src="/images/book1.jpg" alt="even">
+          <%= render_book_cover(@book,:thumb) %>
+
         </div>
         <div class="book-info">
           <h3><%= render_book_title(@book) %></h3>
