@@ -1,4 +1,4 @@
-
+<div class="col-md-10 col-md-offset-1">
   <div class="row">
     <div class="col-md-2 col-md-offset-1 col-lg-2 book-side-content">
       <div class="book-side">
@@ -48,7 +48,7 @@
     <h3>猜你喜欢</h3>
     <%= render partial:"recommend", collection: @books, as: "book" %>
   </div>
-
+</div>
   <%#= link_to 'Edit', edit_book_path(@book) %>
   <%#= link_to 'Back', books_path %>
   <% content_for :javascripts do %>

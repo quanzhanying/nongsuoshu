@@ -26,9 +26,9 @@ class BooksController < ApplicationController
       @book.content = view_context.truncate(@book.content, length: 140)
       @is_valid_subscriber = false
     end
-    if @book.is_free
-      @is_valid_subscriber = true
-    end
+    # if @book.is_free
+    #   @is_valid_subscriber = true
+    # end
     rand_num = rand(10) + 1
     @books = Book.recommend(rand_num)
 
