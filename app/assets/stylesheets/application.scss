@@ -33,8 +33,9 @@
 #footer {
   background: #323232;
   color: #ffffff;
-
+  bottom: 0;
   height: 100px;
+  position: absolute;
   width: 100%;
   min-width: 1200px;
   margin-top: 20px;
