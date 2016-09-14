@@ -5,7 +5,6 @@
       <div class="book-side">
         <div class="thumb">
           <%= render_book_cover(@book,:thumb) %>
-
         </div>
         <div class="book-info">
           <h3><%= render_book_title(@book) %></h3>
@@ -37,12 +36,7 @@
           <h2><%= @book.title %></h2>
         </div>
         <div class="content">
-          <%= @book.introduction %>
-          <% unless @is_valid_subscriber %>
-            <div class="buy-plan text-center">
-              <%= link_to("开通会员免费阅读", new_order_path(), target:"_blank", class: "btn btn-success") %>
-            </div>
-          <% end %>
+          <%= sanitize(@book.content) %>
         </div>
     </div>
   </div>
