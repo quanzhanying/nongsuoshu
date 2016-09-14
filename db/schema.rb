@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160914030615) do
+ActiveRecord::Schema.define(version: 20160914085828) do
 
   create_table "books", force: :cascade do |t|
     t.string   "title"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 20160914030615) do
     t.boolean  "is_editor_choice",  default: false
     t.string   "token"
     t.string   "cover_image_link"
+    t.string   "old_book_id"
+    t.string   "subtitle"
     t.index ["aasm_state"], name: "index_books_on_aasm_state"
   end
 

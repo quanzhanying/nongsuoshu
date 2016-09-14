@@ -10,14 +10,11 @@ class Book < ApplicationRecord
   has_many :favorites_relationships
   has_many :book_fans, through: :favorites_relationships, source: :user
 
-
   before_create :generate_token
 
   def generate_token
     self.token = SecureRandom.uuid
   end
-
-
 
   include AASM
 
@@ -60,6 +57,8 @@ end
 #  is_editor_choice  :boolean          default(FALSE)
 #  token             :string
 #  cover_image_link  :string
+#  old_book_id       :string
+#  subtitle          :string
 #
 # Indexes
 #
