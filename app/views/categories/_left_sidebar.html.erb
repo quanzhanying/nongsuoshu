@@ -1,0 +1,15 @@
+<div class="sidebar-bg">
+  <h2 class="">
+    类型
+  </h2>
+  <h3 class="">
+    <ul class="list-unstyled">
+      <%= active_link_to("全部", categories_path , :active => :exclusive, :wrap_tag => :li ) %>
+      <% @categories.each do |category| %>
+      <%= active_link_to(category.chs_name, category_path(category) , :active => :exclusive, :wrap_tag => :li ) %>
+      <% end %>
+    </ul>
+
+
+  </h3>
+</div>
