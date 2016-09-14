@@ -16,11 +16,14 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
+    @is_valid_subscriber = true
     unless current_user
       @book.content = view_context.truncate(@book.content, length: 140)
+      @is_valid_subscriber = false
     end
     if current_user && !current_user.valid_subscriber?
       @book.content = view_context.truncate(@book.content, length: 140)
+      @is_valid_subscriber = false
     end
 
     set_page_title @book.title
@@ -83,6 +86,37 @@ class BooksController < ApplicationController
     end
   end
 
+
+
+  def add_to_favorites
+    @book = Book.find(params[:id])
+
+    if !current_user.has_added_to_favorites?(@book)
+      current_user.add_to_favorites!(@book)
+      flash[:notice] = "加入收藏成功"
+    else
+      flashl[:warning] = "已经收藏过了哦"
+    end
+    redirect_to :back
+  end
+
+
+  def remove_favorites
+    @book = Book.find(params[:id])
+    if current_user.has_added_to_favorites?(@book)
+      current_user.remove_favorites!(@book)
+      flash[:notice] = "已取消收藏"
+    else
+      flash[:warning] = "还未收藏，不可取消收藏哦"
+    end
+    redirect_to :back
+  end
+
+
+
+
+
+
   protected
 
   def validate_search_key
@@ -98,7 +132,7 @@ class BooksController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_book
-    @book = Book.find(params[:id])
+    @book = Book.find_by_token(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

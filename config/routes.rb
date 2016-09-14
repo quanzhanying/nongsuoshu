@@ -11,6 +11,10 @@ Rails.application.routes.draw do
     collection do
       get :search
     end
+    member do
+      post :add_to_favorites
+      post :remove_favorites
+    end
   end
 
   namespace :admin do
@@ -21,6 +25,7 @@ Rails.application.routes.draw do
       end
     end
     resources :faqs
+    resources :orders
     resources :plans
     resources :users do
       member do
@@ -45,6 +50,13 @@ Rails.application.routes.draw do
       member do
         get :change_password
       end
+    end
+
+  end
+
+  resources :notifications do
+    collection do
+      post :mark_as_read
     end
   end
 

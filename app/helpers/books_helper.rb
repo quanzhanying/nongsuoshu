@@ -20,17 +20,18 @@ module BooksHelper
   end
 
   def render_book_cover(book, size = :front)
-    link_to book_path(book), class: "thumbnail book-image" do
+    link_to book_path(book.token), class: "thumbnail book-image" do
       render_book_cover_image_link(book, size)
     end
   end
 
-  def render_book_cover_image_link(_book, size)
+  def render_book_cover_image_link(book, size)
     case size
     when :thumb
-      image_tag("/images/book1.jpg", size: "165x250")
+      image_tag(book.cover_image_link, size: "165x250")
+
     else
-      image_tag("/images/book1.jpg", size: "330x500")
+      image_tag(book.cover_image_link, size: "330x500")
    end
   end
 end

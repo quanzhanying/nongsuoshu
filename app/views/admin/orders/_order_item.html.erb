@@ -1,0 +1,25 @@
+<tr>
+    <td>
+        <%= item.token[0..12] %>
+    </td>
+    <td>
+        <%= item.plan.name %></td>
+    <td>
+        ¥
+        <%= item.price %>
+    </td>
+    <td>
+        <%=  render_order_status(item) %>
+    </td>
+    <td>
+        年费
+
+    </td>
+    <%#= render_order_payment_part_in_user_panel(item) %>
+    <td>
+      <%= render_formatted_time(item.created_at) %>
+    </td>
+    <td>
+        <%= link_to("查看", admin_order_path(item.token), :class => "btn btn-sm btn-default") %>
+    </td>
+</tr>
