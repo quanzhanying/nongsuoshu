@@ -1,4 +1,4 @@
-require 'csv'
+require "csv"
 class Book < ApplicationRecord
   scope :recent, -> { order("created_at DESC") }
   scope :free, -> { where(is_free: true) }

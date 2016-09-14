@@ -80,6 +80,6 @@ class Admin::BooksController < AdminController
   private
 
   def book_params
-    params.require(:book).permit(:title, :content, :category_id)
+    params.require(:book).permit(:title, :content, :category_id, :is_free, :is_editor_choice)
   end
 end
