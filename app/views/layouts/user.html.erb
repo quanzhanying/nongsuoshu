@@ -12,6 +12,10 @@
     </head>
 
     <body>
+      <div class="container page-wrap">
+
+
+
       <div class="container-fluid">
                   <%= render "common/navbar" %>
                     <div class="container col-md-2 col-md-offset-0">
@@ -19,7 +23,7 @@
                           <li role="presentation" class="active"><%= link_to("我的资料", account_users_path) %> </li>
                         </div>
                         <div class="notice notice-warning">
-                          <li role="presentation" class="active"><%= link_to("我的收藏", "#" ) %> </li>
+                          <li role="presentation" class="active"><%= link_to("我的收藏", account_favorites_path ) %> </li>
                         </div>
                         <div class="notice noti<%  %>ce-info">
                           <li role="presentation" class="active">
@@ -42,7 +46,11 @@
               </div>
             </div>
       </div>
-        <%= render "common/footer" %>
+  </div>
+      <div >
+          <%= render "common/footer" %>
+      </div>
+
         <%= yield :orders_javascript %>
     </body>
 </html>

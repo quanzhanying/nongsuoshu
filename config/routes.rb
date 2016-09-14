@@ -52,6 +52,11 @@ Rails.application.routes.draw do
       end
     end
 
+
+    resources :favorites
+
+
+
   end
 
   resources :notifications do
