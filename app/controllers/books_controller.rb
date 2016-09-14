@@ -17,26 +17,14 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
-    @is_valid_subscriber = true
-    unless current_user
-      @book.content = view_context.truncate(@book.content, length: 140)
-      @is_valid_subscriber = false
-    end
-    if current_user && !current_user.valid_subscriber?
-      @book.content = view_context.truncate(@book.content, length: 140)
-      @is_valid_subscriber = false
-    end
-    if @book.is_free
-      @is_valid_subscriber = true
-    end
+
     rand_num = rand(10) + 1
     @books = Book.recommend(rand_num)
+    free_to_read?(@book)
     unless @is_valid_subscriber
       render "preview"
       return
     end
-
-
 
     set_page_title @book.title
     drop_breadcrumb(@book.title, book_path(@book))
@@ -93,8 +81,9 @@ class BooksController < ApplicationController
 
   def search
     if @query_string.present?
+      free_to_read?(nil)
       search_result = Book.ransack(@search_criteria).result(distinct: true)
-      @books_search = search_result.paginate(page: params[:page], per_page: 3)
+      @books_search = search_result.paginate(page: params[:page], per_page: 5)
     end
   end
 
@@ -139,6 +128,19 @@ class BooksController < ApplicationController
 
 
   protected
+
+  def free_to_read?(book)
+    @is_valid_subscriber = true
+    unless current_user
+      @is_valid_subscriber = false
+    end
+    if current_user && !current_user.valid_subscriber?
+      @is_valid_subscriber = false
+    end
+    if book && book.is_free
+      @is_valid_subscriber = true
+    end
+  end
 
   def validate_search_key
     @query_string = params[:q].gsub(/\\|\'|\/|\?/, "") if params[:q].present?
