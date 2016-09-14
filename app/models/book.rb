@@ -8,7 +8,16 @@ class Book < ApplicationRecord
   belongs_to :category
 
   has_many :favorites_relationships
-  has_many :book_fans, through: :favorites_relationships, source: :user 
+  has_many :book_fans, through: :favorites_relationships, source: :user
+
+
+  before_create :generate_token
+
+  def generate_token
+    self.token = SecureRandom.uuid
+  end
+
+
 
   include AASM
 
@@ -38,7 +47,7 @@ end
 #  updated_at        :datetime         not null
 #  aasm_state        :string           default("book_created")
 #  category_id       :integer
-#  preface           :text
+#  introduction      :text
 #  author_name       :string
 #  published_date    :date
 #  rating_from_ma    :float
@@ -49,6 +58,7 @@ end
 #  translater_name   :string
 #  is_free           :boolean          default(FALSE)
 #  is_editor_choice  :boolean          default(FALSE)
+#  token             :string
 #
 # Indexes
 #

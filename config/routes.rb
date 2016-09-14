@@ -53,6 +53,12 @@ Rails.application.routes.draw do
 
   end
 
+  resources :notifications do
+    collection do
+      post :mark_as_read
+    end
+  end
+
   get "/how_it_works", to: "welcome#how_it_works"
   get "/about_us", to: "welcome#about_us"
   get "/help_term", to: "welcome#help_term"

@@ -9,7 +9,7 @@
 #  updated_at        :datetime         not null
 #  aasm_state        :string           default("book_created")
 #  category_id       :integer
-#  preface           :text
+#  introduction      :text
 #  author_name       :string
 #  published_date    :date
 #  rating_from_ma    :float
@@ -20,6 +20,7 @@
 #  translater_name   :string
 #  is_free           :boolean          default(FALSE)
 #  is_editor_choice  :boolean          default(FALSE)
+#  token             :string
 #
 # Indexes
 #
