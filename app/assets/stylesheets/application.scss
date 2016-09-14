@@ -23,6 +23,10 @@
 @import "font-awesome";
 
 
+* {
+  margin: 0;
+}
+
 // Trix Form
 .formatted_content{
   min-height: 150px;
@@ -47,9 +51,6 @@
 }
 
 
-* {
-  margin: 0;
-}
 html, body {
   height: 100%;
 
@@ -63,7 +64,7 @@ html, body {
   min-height: 100%;
   min-width: 100%;
   /* equal to footer height */
-  margin-bottom: -70px;
+  margin-bottom: -60px;
 }
 .page-wrap:after {
   content: "";
@@ -114,4 +115,16 @@ img{
   a:active {color: #43cb83};
 
 }
-// congi navbar end
+
+
+// body background set white
+.body-bg{
+  background-color: white;
+  box-shadow: 2px 2px 5px rgba(black, .1);
+  height: 100%;
+}
+
+// remove navebar default margin bottome
+.navbar{
+  margin-bottom: 0;
+}

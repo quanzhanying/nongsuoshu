@@ -16,7 +16,7 @@ module BooksHelper
   end
 
   def render_book_title(book)
-    link_to(book.title, book_path(book.token))
+    link_to(book.title, book_path(book.token), class: "book-name")
   end
 
   def render_book_title_search(book_title, book)
@@ -45,6 +45,18 @@ module BooksHelper
 
   def render_index_author_name(book)
     truncate(book.author_name, escape: false, length: 17)
+  end
+
+  def render_book_content_for_display(book)
+    if book.can_display_for_user(current_user)
+      book.content.html_safe
+    else
+      truncate(strip_tags(book.content), length: 250)
+    end
+  end
+
+  def render_amazon_link(book)
+    link_to("去亚马逊购买", book.amazon_link, class:"btn btn-default", target:"_blank")
   end
 
 end

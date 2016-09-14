@@ -30,7 +30,7 @@ class User < ApplicationRecord
   end
 
   def valid_subscriber?
-    expired_at && expired_at > Time.zone.now
+    (expired_at && expired_at > Time.zone.now) || admin?
   end
 
   def add_subscription_date!(plan_date)
@@ -44,7 +44,6 @@ class User < ApplicationRecord
     save
   end
 end
-
 
 # == Schema Information
 #

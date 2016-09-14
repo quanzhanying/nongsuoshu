@@ -17,6 +17,19 @@ class Admin::BooksController < AdminController
     @categories = Category.all
   end
 
+  def new_import
+  end
+
+  def create_import
+    if params[:file].present?
+      Book.import(params[:file])
+      redirect_to admin_books_path, notice: "Books imported."
+    else
+      flash[:warning] = "You need to upload something"
+      render :new_import
+    end
+  end
+
   def edit
     @categories = Category.all
   end
@@ -67,6 +80,6 @@ class Admin::BooksController < AdminController
   private
 
   def book_params
-    params.require(:book).permit(:title, :content, :category_id)
+    params.require(:book).permit(:title, :content, :category_id, :is_free, :is_editor_choice, :introduction, :author_name, :cover_image_link)
   end
 end

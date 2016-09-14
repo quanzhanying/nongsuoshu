@@ -9,7 +9,7 @@ class BooksController < ApplicationController
       if params[:category_id]
         Book.where("category_id = ?", params[:category_id])
       else
-        @books = Book.all.paginate(page: params[:page], per_page: 3)
+         Book.all.paginate(page: params[:page], per_page: 3)
       end
     @categories = Category.all
   end
@@ -17,27 +17,12 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
-    @is_valid_subscriber = true
-    unless current_user
-      @book.content = view_context.truncate(@book.content, length: 140)
-      @is_valid_subscriber = false
-    end
-    if current_user && !current_user.valid_subscriber?
-      @book.content = view_context.truncate(@book.content, length: 140)
-      @is_valid_subscriber = false
-    end
-    if @book.is_free
-      @is_valid_subscriber = true
-    end
     rand_num = rand(10) + 1
     @books = Book.recommend(rand_num)
-
-    unless @is_valid_subscriber
-      render "preview"
+    unless @book.can_display_for_user(current_user)
+      render :preview
       return
     end
-
-
 
     set_page_title @book.title
     drop_breadcrumb(@book.title, book_path(@book))
@@ -94,12 +79,11 @@ class BooksController < ApplicationController
 
   def search
     if @query_string.present?
+      free_to_read?(nil)
       search_result = Book.ransack(@search_criteria).result(distinct: true)
-      @books_search = search_result.paginate(page: params[:page], per_page: 3)
+      @books_search = search_result.paginate(page: params[:page], per_page: 5)
     end
   end
-
-
 
   def add_to_favorites
     message = {}
@@ -117,7 +101,6 @@ class BooksController < ApplicationController
     render json: message
   end
 
-
   def remove_favorites
     message = {}
     unless current_user
@@ -134,12 +117,20 @@ class BooksController < ApplicationController
     render json: message
   end
 
-
-
-
-
-
   protected
+
+  def free_to_read?(book)
+    @is_valid_subscriber = true
+    unless current_user
+      @is_valid_subscriber = false
+    end
+    if current_user && !current_user.valid_subscriber?
+      @is_valid_subscriber = false
+    end
+    if book && book.is_free
+      @is_valid_subscriber = true
+    end
+  end
 
   def validate_search_key
     @query_string = params[:q].gsub(/\\|\'|\/|\?/, "") if params[:q].present?
@@ -147,7 +138,7 @@ class BooksController < ApplicationController
   end
 
   def search_criteria(query_string)
-    { title_cont: query_string}
+    { title_cont: query_string }
   end
 
   private

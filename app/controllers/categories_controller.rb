@@ -1,15 +1,18 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
-
+  layout "category"
   # GET /categories
   # GET /categories.json
   def index
+    @books = Book.all.paginate(page: params[:page], per_page: 9)
     @categories = Category.all
   end
 
   # GET /categories/1
   # GET /categories/1.json
   def show
+    @books = Book.where("category_id = ?", params[:id]).paginate(page: params[:page], per_page: 9)
+    @categories = Category.all
   end
 
   # GET /categories/new

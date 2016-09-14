@@ -1,9 +1,25 @@
-<div class="search-view">
-  <div class="search-detail">
-      <div class="search-info">
-        <p>以下是&nbsp"<span><%= @query_string %></span>"&nbsp的搜索结果：</p>
-      </div>
+<div class="col-md-10 col-md-offset-1 book-top">
+  <div class="search-view">
+    <div class="search-detail">
+        <div class="search-info">
+          <p>以下是&nbsp"<span><%= @query_string %></span>"&nbsp的搜索结果：</p>
+        </div>
 
-      <%= render(:partial => "books/item", :collection => @books_search, :as => :book) || render_search_empty_result %>
-    </div>
+        <%= render(:partial => "books/item", :collection => @books_search, :as => :book) || render_search_empty_result %>
+        <div class="text-center">
+          <%= will_paginate @books_search %>
+        </div>
+      </div>
+  </div>
 </div>
+<% content_for :javascripts do %>
+  <script>
+    $(function() {
+      $(".book-info-out").click(function (event) {
+        event.stopPropagation();
+        var url = "/books/" + $(this).attr("bookId") + "/";
+        window.open(url)
+      });
+    })
+  </script>
+<% end %>
