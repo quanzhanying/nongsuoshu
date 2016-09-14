@@ -10,17 +10,12 @@
         <div class="book-info">
           <h3><%= render_book_title(@book) %></h3>
           <span class="operate">
-            <%= link_to("收藏", account_users_path) %>
-
             <% if current_user && current_user.has_added_to_favorites?(@book) %>
-               <%= link_to("取消收藏", remove_favorites_book_path(@book), method: :post, class: "btn btn-default") %>
-             <% else %>
-               <%= link_to("收藏", add_to_favorites_book_path(@book), method: :post, class: "btn btn-default") %>
-             <% end %>
-
-
-            <i class="fa fa-heart-o" aria-hidden="true"></i>
-            <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+              <i class="fa fa-heart favorite" bookId="<%= @book.token %>"  aria-hidden="true"></i>
+            <% else %>
+              <i class="fa fa-heart-o favorite" bookId="<%= @book.token %>"  aria-hidden="true"></i>
+            <% end %>
+            <!-- <i class="fa fa-paper-plane-o" aria-hidden="true"></i> -->
           </span>
         </div>
       </div>
@@ -54,3 +49,54 @@
 
   <%#= link_to 'Edit', edit_book_path(@book) %>
   <%#= link_to 'Back', books_path %>
+  <% content_for :javascripts do %>
+    <script>
+      $(function() {
+
+        $(".favorite").click(function() {
+          if ($(this).hasClass("fa-heart")) {
+            var bookId = $(this).attr("bookId");
+            dislike(bookId, $(this));
+          } else if($(this).hasClass("fa-heart-o")) {
+            var bookId = $(this).attr("bookId");
+            like(bookId, $(this));
+          }
+        });
+      });
+
+      function like(bookId, obj) {
+        $.ajax({
+          url: "/books/" + bookId + "/add_to_favorites/",
+          method: "post",
+          dataType: "json",
+          success: function(data){
+            if(data.status == "y") {
+              if(obj.hasClass("fa-heart-o")) {
+                obj.addClass("fa-heart").removeClass("fa-heart-o");
+              }
+            } else if(data.needlogin == "y") {
+              alert("请先登录");
+            }
+          }
+        });
+      }
+
+      function dislike(bookId, obj) {
+        $.ajax({
+          url: "/books/" + bookId + "/remove_favorites/",
+          method: "post",
+          dataType: "json",
+          success: function(data){
+            if(data.status == "y") {
+              if(obj.hasClass("fa-heart")) {
+                obj.addClass("fa-heart-o").removeClass("fa-heart");
+              }
+            } else if(data.needlogin == "y") {
+              alert("请先登录");
+            }
+          }
+        });
+      }
+
+    </script>
+  <% end %>
