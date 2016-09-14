@@ -12,7 +12,7 @@ class Account::OrdersController < AccountController
 
   def pay_with_wechat
     @order.pay("wechat")
-
+    current_user.is_paid = true
     current_user.add_subscription_date!(@order.plan.plan_date)
 
     flash[:notice] = "支付成功！"
@@ -22,7 +22,7 @@ class Account::OrdersController < AccountController
 
   def pay_with_alipay
     @order.pay("alipay")
-
+    current_user.is_paid = true
     current_user.add_subscription_date!(@order.plan.plan_date)
 
     flash[:notice] = "支付成功！"

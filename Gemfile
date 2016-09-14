@@ -36,6 +36,8 @@ gem "active_link_to"
 gem "font-awesome-rails"
 gem "ransack"
 gem "aasm"
+gem "awesome_rails_console"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
