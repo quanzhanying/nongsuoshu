@@ -62,7 +62,6 @@
   h3{
     color:#4b5055;
     font-size: 15px;
-    padding-left: 15px;
     line-height: 25px;
       a {
         color:#4b5055;
@@ -75,6 +74,9 @@
         color:#0099ff;
       }
 
+    li:after{
+      content: " >"
+    }
   }
 }
 
