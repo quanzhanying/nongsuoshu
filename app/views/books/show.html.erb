@@ -5,7 +5,6 @@
       <div class="book-side">
         <div class="thumb">
           <%= render_book_cover(@book,:thumb) %>
-
         </div>
         <div class="book-info">
           <h3><%= render_book_title(@book) %></h3>
@@ -43,6 +42,7 @@
               <%= link_to("购买会员", new_order_path(), target:"_blank", class: "btn btn-success") %>
             </div>
           <% end %>
+
         </div>
     </div>
   </div>

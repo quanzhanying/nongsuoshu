@@ -19,6 +19,10 @@ module BooksHelper
     link_to(book.title, book_path(book.token))
   end
 
+  def render_book_title_search(book_title, book)
+    link_to(book_title, book_path(book.token))
+  end
+
   def render_book_cover(book, size = :front)
     link_to book_path(book.token), class: "thumbnail book-image" do
       render_book_cover_image_link(book, size)
