@@ -4,7 +4,7 @@
 #
 #  id                :integer          not null, primary key
 #  title             :string
-#  content           :text
+#  content           :text(16777215)
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #  aasm_state        :string           default("book_created")

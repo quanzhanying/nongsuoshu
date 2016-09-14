@@ -1,7 +1,10 @@
 class WelcomeController < ApplicationController
-layout "welcome", only:[:index]
 
 
+  layout "welcome", only: [:index]
+  def index
+    @books = Book.recent.limit(5)
+  end
 
 
   def help_term

@@ -19,16 +19,17 @@ class BooksController < ApplicationController
   def show
     @is_valid_subscriber = true
     unless current_user
-      @book.content = view_context.truncate(@book.content, length: 140)
       @is_valid_subscriber = false
     end
+
     if current_user && !current_user.valid_subscriber?
-      @book.content = view_context.truncate(@book.content, length: 140)
       @is_valid_subscriber = false
     end
+
     if @book.is_free
       @is_valid_subscriber = true
     end
+
     rand_num = rand(10) + 1
     @books = Book.recommend(rand_num)
 
@@ -36,8 +37,6 @@ class BooksController < ApplicationController
       render "preview"
       return
     end
-
-
 
     set_page_title @book.title
     drop_breadcrumb(@book.title, book_path(@book))
@@ -99,8 +98,6 @@ class BooksController < ApplicationController
     end
   end
 
-
-
   def add_to_favorites
     message = {}
     unless current_user
@@ -116,7 +113,6 @@ class BooksController < ApplicationController
     end
     render json: message
   end
-
 
   def remove_favorites
     message = {}
@@ -134,11 +130,6 @@ class BooksController < ApplicationController
     render json: message
   end
 
-
-
-
-
-
   protected
 
   def validate_search_key
@@ -147,7 +138,7 @@ class BooksController < ApplicationController
   end
 
   def search_criteria(query_string)
-    { title_cont: query_string}
+    { title_cont: query_string }
   end
 
   private
