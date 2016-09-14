@@ -37,7 +37,7 @@ gem "font-awesome-rails"
 gem "ransack"
 gem "aasm"
 gem "awesome_rails_console"
-
+gem "htmlentities"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
