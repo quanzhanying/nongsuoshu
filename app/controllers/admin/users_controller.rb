@@ -1,4 +1,5 @@
 class Admin::UsersController < ApplicationController
+  layout "admin"
 
   def index
     @users = User.all
@@ -11,7 +12,7 @@ class Admin::UsersController < ApplicationController
     redirect_to :back
   end
 
-  def deomote
+  def demote
     @user.is_paid = false
     @user.save
     flash[:notice] = "已将该用户设为非付费会员"

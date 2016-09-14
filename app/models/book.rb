@@ -26,6 +26,12 @@
 #  index_books_on_aasm_state  (aasm_state)
 #
 
+#
+# Indexes
+#
+#  index_books_on_aasm_state  (aasm_state)
+#
+
 class Book < ApplicationRecord
   scope :recent, -> { order("created_at DESC") }
   scope :free, -> { where(is_free: true) }
