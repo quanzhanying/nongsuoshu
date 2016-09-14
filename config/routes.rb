@@ -46,6 +46,13 @@ Rails.application.routes.draw do
         get :change_password
       end
     end
+
+    resources :favorites do
+      member do
+        post :add
+        post :delete
+      end
+    end
   end
 
   get "/how_it_works", to: "welcome#how_it_works"
