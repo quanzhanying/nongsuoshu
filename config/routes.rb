@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       end
     end
     resources :faqs
+    resources :orders
     resources :plans
     resources :users do
       member do
