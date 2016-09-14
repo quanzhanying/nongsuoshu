@@ -21,6 +21,7 @@
 #  is_free           :boolean          default(FALSE)
 #  is_editor_choice  :boolean          default(FALSE)
 #  token             :string
+#  cover_image_link  :string
 #
 # Indexes
 #
