@@ -25,7 +25,7 @@
         <p>用户打分: TODO</p>
         <p>阅读数: <%= @book.pv %> </p>
         <p>评论数: <%= @book.comments_count %> </p>
-        <p>亚马逊连结: <%= @book.amazon_link %> </p>
+        <p>亚马逊连结: <%= render_amazon_link(@book) %> </p>
       </div>
     </div>
 

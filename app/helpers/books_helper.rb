@@ -50,4 +50,8 @@ module BooksHelper
       truncate(strip_tags(book.content), length: 250)
     end
   end
+
+  def render_amazon_link(book)
+    link_to("去亚马逊购买", book.amazon_link, class:"btn btn-default", target:"_blank")
+  end
 end
