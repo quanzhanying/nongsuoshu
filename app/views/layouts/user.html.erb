@@ -20,12 +20,8 @@
                         </div>
                         <div class="notice notice-info">
                           <li role="presentation" class="active">
-                          <%   if current_user && !current_user.valid_subscriber?%>
-                              <%= link_to("年费会员", account_orders_path) %></li>
-                          <% else %>
-                            <%= link_to("年费会员",account_orders_path) %></li>
-                            <% end %>
 
+                              <%= link_to("我的订单", account_orders_path) %></li>
                         </div>
                         <!-- <div class="notice notice-danger">
                           <li role="presentation" class="active"><%= link_to("用户管理",  "#") %></li>

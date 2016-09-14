@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
+ActiveRecord::Schema.define(version: 20160913141036) do
 
   create_table "books", force: :cascade do |t|
     t.string   "title"
@@ -27,11 +27,9 @@
     t.integer  "pv"
     t.string   "comments_count"
     t.string   "amazon_link"
-
     t.string   "translater_name"
     t.boolean  "is_free",           default: false
     t.boolean  "is_editor_choice",  default: false
-
     t.index ["aasm_state"], name: "index_books_on_aasm_state"
   end
 
