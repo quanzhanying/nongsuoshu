@@ -1,4 +1,12 @@
+<h2>我的订单</h2>
+
 <table class="table table-striped table-bordered table-list">
+
+  <% if @orders.blank? %>
+    你暂时还不是会员哦，<%= link_to("点击这里", plans_path) %>查看我们的服务。
+  <% else %>
+
+
     <thead>
         <tr>
             <th>订单编号</th>
@@ -40,3 +48,5 @@
     </tbody>
     <% end %>
 </table>
+
+  <% end %>

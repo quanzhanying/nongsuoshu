@@ -5,19 +5,16 @@
         <%= csrf_meta_tags %>
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <link rel="shortcut icon" href="/images/favicon.ico">
     </head>
 
     <body>
         <div>
           <%= render "common/navbar" %>
         </div>
-        <div class="container page-wrap ">
+
             <%= render "common/flashes" %>
              <%# render_breadcrumb %>
             <%= yield %>
-
-        </div>
 
         <div class="site-footer">
           <%= render "common/footer" %>

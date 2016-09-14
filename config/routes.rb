@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => {:registrations => "devise/registrations", :change_password => "registrations"}
+  devise_for :users, :controllers => {:registrations => "registrations", :change_password => "registrations"}
 
   resources :categories
 
@@ -52,6 +52,11 @@ Rails.application.routes.draw do
       end
     end
 
+
+    resources :favorites
+
+
+
   end
 
   resources :notifications do
@@ -65,5 +70,5 @@ Rails.application.routes.draw do
   get "/help_term", to: "welcome#help_term"
   get "/contact_us", to: "welcome#contact_us"
 
-  root to: "books#index"
+  root to: "welcome#index"
 end
