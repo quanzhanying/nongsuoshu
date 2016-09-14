@@ -44,12 +44,10 @@ module BooksHelper
   end
 
   def render_book_content_for_display(book)
-    unless current_user
-      return truncate(strip_tags(book.content), length: 250)
+    if book.can_display_for_user(current_user)
+      book.content.html_safe
+    else
+      truncate(strip_tags(book.content), length: 250)
     end
-    if current_user && !current_user.valid_subscriber?
-      return truncate(strip_tags(book.content), length: 250)
-    end
-    book.content.html_safe
   end
 end

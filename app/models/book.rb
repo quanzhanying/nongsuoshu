@@ -64,6 +64,20 @@ class Book < ApplicationRecord
     end
   end
 
+  def can_display_for_user(user)
+    can_flag = false
+    if is_free
+      can_flag =  true
+    end
+
+    if user.present? && user.valid_subscriber?
+      can_flag =  true
+
+    end
+
+    can_flag
+  end
+
   def self.open_spreadsheet(file)
     case File.extname(file.original_filename)
     when ".csv" then CSV.read(file.path)

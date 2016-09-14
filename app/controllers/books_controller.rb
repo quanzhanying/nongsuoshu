@@ -17,26 +17,13 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
-    @is_valid_subscriber = true
-    unless current_user
-      @is_valid_subscriber = false
-    end
-
-    if current_user && !current_user.valid_subscriber?
-      @is_valid_subscriber = false
-    end
-
-    if @book.is_free
-      @is_valid_subscriber = true
+    unless @book.can_display_for_user(current_user)
+      render :preview
+      return
     end
 
     rand_num = rand(10) + 1
     @books = Book.recommend(rand_num)
-
-    unless @is_valid_subscriber
-      render "preview"
-      return
-    end
 
     set_page_title @book.title
     drop_breadcrumb(@book.title, book_path(@book))
