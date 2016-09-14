@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%= render_page_title_tag %>
+        <%= csrf_meta_tags %>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    </head>
+
+    <body>
+        <div>
+          <%= render "common/navbar" %>
+        </div>
+        <div class="container page-wrap ">
+            <%= render "common/flashes" %>
+             <%# render_breadcrumb %>
+             <div class="row">
+             <div class="col-md-2 col-md-offset-1">
+             <ul class="nav nav-pills nav-stacked user-menu-li side-bar-block">
+             <%= active_link_to("关于我们", about_us_path , :active => :inclusive, :wrap_tag => :li ) %>
+             <%= active_link_to("联系我们", contact_us_path , :active => :inclusive, :wrap_tag => :li ) %>
+             <%= active_link_to("服务协议", help_term_path , :active => :inclusive, :wrap_tag => :li ) %>
+             </ul>
+           </div>
+             <div class="col-md-8 des-block">
+             <%= yield %>
+           </div>
+         </div>        </div>
+        <div class="site-footer">
+            <%= render "common/footer" %>
+        </div>
+            <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+            <%= yield :javascripts %>
+    </body>
+</html>

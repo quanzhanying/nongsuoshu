@@ -28,9 +28,9 @@ module BooksHelper
   def render_book_cover_image_link(_book, size)
     case size
     when :thumb
-      image_tag("http://oaurkepr4.bkt.clouddn.com/375382d7-c6b1-4c96-b1fd-41f795ae36d7.jpg", size: "165x250")
+      image_tag("/images/book1.jpg", size: "165x250")
     else
-      image_tag("http://oaurkepr4.bkt.clouddn.com/375382d7-c6b1-4c96-b1fd-41f795ae36d7.jpg", size: "330x500")
+      image_tag("/images/book1.jpg", size: "330x500")
    end
   end
 end
