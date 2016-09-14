@@ -17,10 +17,10 @@
 #  pv                :integer
 #  comments_count    :string
 #  amazon_link       :string
-#  translater_name   :string
 #  is_free           :boolean          default(FALSE)
 #  is_editor_choice  :boolean          default(FALSE)
 #  token             :string
+#  cover_image_link  :string
 #
 # Indexes
 #
@@ -31,10 +31,7 @@
 #  is_free           :boolean          default(FALSE)
 #  is_editor_choice  :boolean          default(FALSE)
 #
-# Indexes
-#
-#  index_books_on_aasm_state  (aasm_state)
-#
+
 
 require 'test_helper'
 

@@ -1,0 +1,22 @@
+<h2>订单管理面板</h2>
+
+<table class="table table-boldered">
+    <thead>
+      <tr>
+        <th>订单编号</th>
+        <th>课程</th>
+        <th>单价</th>
+        <th>订单状态</th>
+        <th>订单类型</th>
+        <th>订单创建时间</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render(partial: "order_item", collection: @orders, as: "item") || render_order_empty_warning %>
+    </tbody>
+  </table>
+
+  <div class="text-center">
+    <%= will_paginate @projects %>
+  </div>
