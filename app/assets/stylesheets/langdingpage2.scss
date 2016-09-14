@@ -1,0 +1,59 @@
+.lp-books-block-content {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+  height: 307px;
+  position: relative;
+  .books-block-title {
+    text-align: center;
+    font-size: 18px;
+    padding :15px 0 5px 0;
+  }
+  .lp-books-all-books {
+    width: 960px;
+    height: 261.8px;
+    padding: 0 75px;
+  }
+  .lp-books-book {
+
+    height: 220px;
+    float: left;
+    padding:0 7.5px 0 7.5px;
+  }
+}
+
+.lp-user-block-content {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+  height: 265px;
+  padding:50px 0 50px 0;
+  position: relative;
+  .lp-user-left {
+    padding-right :30px;
+    float: left;
+    width: 480px;
+  }
+  .lp-user-right {
+    padding-left :30px;
+    float: left;
+    width: 480px;
+  }
+  .lp-user-avatar {
+    float: left;
+    width: 80px;
+    height: 80px;
+  }
+  .lp-user-thinking {
+    float: left;
+    width: 370px;
+    padding :5px 0 5px 20px;
+  }
+  .lp-user-name {
+    margin-left :100px;
+    padding-top: 10px;
+  }
+
+}

@@ -56,10 +56,12 @@ html, body {
 
   line-height: 1.8em;
   letter-spacing: 0.1em;
+  font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,STHeitiSC-Light,Microsoft YaHei,\\5FAE\8F6F\96C5\9ED1,Arial,sans-serif;
 
 }
 .page-wrap {
   min-height: 100%;
+  min-width: 100%;
   /* equal to footer height */
   margin-bottom: -70px;
 }
@@ -72,11 +74,44 @@ html, body {
 }
 .site-footer {
   background: #323232;
-    color: #ffffff;
+  color: #ffffff;
   padding-top: 20px;
-
   a:link {color: #CCCCCC};
-a:visited {color: #CCCCCC}	;
-a:hover {color: #FFFFFF}	;
-a:active {color: #FFFFFF};
+  a:visited {color: #CCCCCC}	;
+  a:hover {color: #FFFFFF}	;
+  a:active {color: #FFFFFF};
 }
+// config  by nfreeness
+
+a:active,
+a:hover {
+  text-decoration: none;
+}
+
+hr{
+  border: 0;
+  height: 0;
+  margin: 0;
+  border-bottom: 1px solid #CCCCCC;
+}
+
+// navbar
+.navbar-header {
+img{
+  margin-top: 9px;
+  margin-right: 10px;
+  float:left;
+}
+}
+.navbar-link{
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 2px;
+  // margin-left: 30px;
+  a:link {color: #666};
+  a:visited {color: #666}	;
+  a:hover {color: #43cb83}	;
+  a:active {color: #43cb83};
+
+}
+// congi navbar end
