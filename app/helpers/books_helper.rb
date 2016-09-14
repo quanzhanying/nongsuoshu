@@ -42,4 +42,9 @@ module BooksHelper
   def render_book_introduction(book)
     truncate(sanitize(book.introduction), escape: false, length: 160)
   end
+
+  def render_index_author_name(book)
+    truncate(book.author_name, escape: false, length: 17)
+  end
+
 end
