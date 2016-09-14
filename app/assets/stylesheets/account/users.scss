@@ -69,11 +69,10 @@
       }
       a:hover{
         color:#0099ff;
-        text-decoration : none
+        text-decoration : none;
       }
-      a:active{
-        // color:#4b5055;
-        color:#0099ff; /*blue*/
+      a.active{
+        color:#0099ff;
       }
 
   }
@@ -85,5 +84,8 @@
   h1 {
     font-size: 24px;
   }
-  
+  .blue-text {
+    color:#0099ff; /*blue*/
+  }
+
 }
