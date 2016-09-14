@@ -14,8 +14,8 @@
 #  published_date    :date
 #  rating_from_ma    :float
 #  rating_from_users :float
-#  pv                :integer
-#  comments_count    :string
+#  pv                :integer          default(0)
+#  comments_count    :string           default("0")
 #  amazon_link       :string
 #  translater_name   :string
 #  is_free           :boolean          default(FALSE)

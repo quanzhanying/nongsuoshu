@@ -6,4 +6,9 @@ namespace :dev do
   desc "demo"
   task demo: :environment do
   end
+
+  desc "extract_amazon_link"
+  task extract_amazon_link: :environment do
+    Book.all.each(&:extract_amazon_link!)
+  end
 end

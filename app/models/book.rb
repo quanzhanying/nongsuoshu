@@ -84,6 +84,15 @@ class Book < ApplicationRecord
     else raise "Unknown file type: #{file.original_filename}"
     end
   end
+
+  def extract_amazon_link!
+    doc = Nokogiri::HTML(content)
+
+    if doc.css("a")[0].present? && doc.css("a")[0]["href"].include?("amazon")
+      self.amazon_link = doc.css("a")[0]["href"]
+      save
+    end
+  end
 end
 
 # == Schema Information
@@ -102,8 +111,8 @@ end
 #  published_date    :date
 #  rating_from_ma    :float
 #  rating_from_users :float
-#  pv                :integer
-#  comments_count    :string
+#  pv                :integer          default(0)
+#  comments_count    :string           default("0")
 #  amazon_link       :string
 #  translater_name   :string
 #  is_free           :boolean          default(FALSE)
