@@ -4,11 +4,21 @@
     <div class="col-md-2 col-md-offset-1 col-lg-2 book-side-content">
       <div class="book-side">
         <div class="thumb">
-          <img src="/images/book1.jpg" alt="even">
+          <%= render_book_cover(@book,:thumb) %>
+
         </div>
         <div class="book-info">
           <h3><%= render_book_title(@book) %></h3>
           <span class="operate">
+            <%= link_to("收藏", account_users_path) %>
+
+            <% if current_user && current_user.has_added_to_favorites?(@book) %>
+               <%= link_to("取消收藏", remove_favorites_book_path(@book), method: :post, class: "btn btn-default") %>
+             <% else %>
+               <%= link_to("收藏", add_to_favorites_book_path(@book), method: :post, class: "btn btn-default") %>
+             <% end %>
+
+
             <i class="fa fa-heart-o" aria-hidden="true"></i>
             <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
           </span>
@@ -32,7 +42,12 @@
           <h2><%= @book.title %></h2>
         </div>
         <div class="content">
-          <%= @book.content %>
+          <%= @book.introduction %>
+          <% unless @is_valid_subscriber %>
+            <div class="buy-plan text-center">
+              <%= link_to("购买会员", new_order_path(), target:"_blank", class: "btn btn-success") %>
+            </div>
+          <% end %>
         </div>
     </div>
   </div>

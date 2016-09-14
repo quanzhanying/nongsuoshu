@@ -3,7 +3,7 @@
     <head>
 
               <%= render_page_title_tag %>
-              
+
         <%= csrf_meta_tags %>
         <link rel="shortcut icon" href="/images/rocket2.ico">
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -19,10 +19,12 @@
                           <li role="presentation" class="active"><%= link_to("我的资料", account_users_path) %> </li>
                         </div>
                         <div class="notice notice-warning">
-                          <li role="presentation" class="active"><%= link_to("我收藏的浓缩书", "#" ) %> </li>
+                          <li role="presentation" class="active"><%= link_to("我的收藏", "#" ) %> </li>
                         </div>
-                        <div class="notice notice-info">
-                          <li role="presentation" class="active"><%= link_to("年费会员", "#") %></li>
+                        <div class="notice noti<%  %>ce-info">
+                          <li role="presentation" class="active">
+
+                              <%= link_to("我的订单", account_orders_path) %></li>
                         </div>
                         <!-- <div class="notice notice-danger">
                           <li role="presentation" class="active"><%= link_to("用户管理",  "#") %></li>
