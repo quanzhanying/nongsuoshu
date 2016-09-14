@@ -16,10 +16,18 @@
              <%# render_breadcrumb %>
              <div class="row">
              <div class="col-md-2 col-md-offset-1">
-             <ul class="nav nav-pills nav-stacked user-menu-li side-bar-block">
+             <ul class="nav nav-pills nav-stacked user-menu-li side-bar-block text-center">
              <%= active_link_to("关于我们", about_us_path , :active => :inclusive, :wrap_tag => :li ) %>
              <%= active_link_to("联系我们", contact_us_path , :active => :inclusive, :wrap_tag => :li ) %>
-             <%= active_link_to("服务协议", help_term_path , :active => :inclusive, :wrap_tag => :li ) %>
+             <li>
+               <a href="http://tinfinite.com/" target="_blank">情非得已</a>
+             </li>
+             <li>
+               <a href="http://xinshengdaxue.com/" target="_blank">新生大学</a>
+             </li>
+             <li>
+               <a href="http://sudoboot.com/" target="_blank">风利</a>
+             </li>
              </ul>
            </div>
              <div class="col-md-8 des-block">
