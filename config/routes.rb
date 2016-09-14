@@ -70,5 +70,5 @@ Rails.application.routes.draw do
   get "/help_term", to: "welcome#help_term"
   get "/contact_us", to: "welcome#contact_us"
 
-  root to: "books#index"
+  root to: "welcome#index"
 end
