@@ -1,4 +1,4 @@
-<div class="col-md-10 col-md-offset-1">
+<div class="col-md-10 col-md-offset-1 book-top">
 <div class="row book-row">
   <div class="col-md-12 col-lg-12">
     <div class="col-md-2 col-md-offset-1 col-lg-2">
@@ -14,7 +14,7 @@
         <p>译者: <%= @book.translater_name %></p>
         <p>出版时间: <%= @book.published_date %></p>
         <p>美亚评分: <%=  @book.rating_from_ma  %> </p>
-        <p>阅读数: TODO</p>
+        <p>阅读数: <%= @book.pv %></p>
         <p>评论数: <%= @book.comments_count %> </p>
         <p>亚马逊连结: <%= render_amazon_link(@book) %> </p>
       </div>

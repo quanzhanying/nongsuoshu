@@ -23,7 +23,7 @@ class BooksController < ApplicationController
       render :preview
       return
     end
-    
+
     set_page_title @book.title
     drop_breadcrumb(@book.title, book_path(@book))
   end
