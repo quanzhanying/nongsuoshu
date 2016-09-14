@@ -80,15 +80,37 @@ html, body {
   a:hover {color: #FFFFFF}	;
   a:active {color: #FFFFFF};
 }
-// config navbar by nfreeness
+// config  by nfreeness
+
+a:active,
+a:hover {
+  text-decoration: none;
+}
+
+hr{
+  border: 0;
+  height: 0;
+  margin: 0;
+  border-bottom: 1px solid #CCCCCC;
+}
+
+// navbar
 .navbar-header {
 img{
   margin-top: 9px;
   margin-right: 10px;
   float:left;
 }
-// a{
-//   float: left;
-// }
+}
+.navbar-link{
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 2px;
+  // margin-left: 30px;
+  a:link {color: #666};
+  a:visited {color: #666}	;
+  a:hover {color: #43cb83}	;
+  a:active {color: #43cb83};
+
 }
 // congi navbar end
