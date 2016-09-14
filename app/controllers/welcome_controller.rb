@@ -1,8 +1,6 @@
 class WelcomeController < ApplicationController
 layout "welcome", only:[:index]
-  def index
-    @books = Book.find(1,2,3,4,5,6)
-  end
+
 
 
 
