@@ -26,6 +26,7 @@
       <p>阅读数: <%= @book.pv %> </p>
       <p>评论数: <%= @book.comments_count %> </p>
       <p>亚马逊连结: <%= @book.amazon_link %> </p>
+
     </div>
   </div>
 
@@ -35,13 +36,13 @@
         <h2><%= @book.title %></h2>
       </div>
       <div class="row content">
-        <%= (CGI::unescapeHTML @book.content).html_safe %>
+        <%= render_book_content_for_display(@book) %>
       </div>
 
-      
+
   </div>
 
-  
+
 
   <%#= link_to 'Edit', edit_book_path(@book) %>
   <%#= link_to 'Back', books_path %>
