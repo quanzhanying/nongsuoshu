@@ -1,0 +1,41 @@
+body {
+  background: #f4f4f4;
+  line-height: 1.8em;
+  letter-spacing: 0.1em;
+  color: #333;
+}
+
+// Sticky Footer - add by chpwang
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+.page-wrap {
+  min-width: 100%;
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -100px;
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  height: 100px;
+}
+// Sticky Footer - add by chpwang
+
+.site-footer{
+  background-color: #dedede;
+}
+
+.footer {
+  color: #888;
+  padding-top: 20px;
+  a:link {color: #333};
+  a:visited {color: #333}	;
+  a:hover {color: #666}	;
+  a:active {color: #666};
+}

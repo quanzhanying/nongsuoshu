@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+
+              <%= render_page_title_tag %>
+
         <%= csrf_meta_tags %>
         <link rel="shortcut icon" href="/images/rocket2.ico">
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -18,7 +21,7 @@
                         <div class="notice notice-warning">
                           <li role="presentation" class="active"><%= link_to("我收藏的浓缩书", "#" ) %> </li>
                         </div>
-                        <div class="notice notice-info">
+                        <div class="notice noti<%  %>ce-info">
                           <li role="presentation" class="active">
 
                               <%= link_to("我的订单", account_orders_path) %></li>
