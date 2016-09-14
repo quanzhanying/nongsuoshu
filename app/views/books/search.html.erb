@@ -4,9 +4,6 @@
         <p>以下是&nbsp"<span><%= @query_string %></span>"&nbsp的搜索结果：</p>
       </div>
 
-      <table class="table">
-
       <%= render(:partial => "books/item", :collection => @books_search, :as => :book) || render_search_empty_result %>
-      </table>
     </div>
 </div>

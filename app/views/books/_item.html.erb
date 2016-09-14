@@ -1,7 +1,16 @@
 
-  <tr>
-    <td><%= book.title %></td>
-    <td><%= render_highlight_title(book, @query_string) %></td>
-    <td><%= render_highlight_content(book, @query_string) %></td>
-    <td><%= link_to 'Show', book %></td>
-  </tr>
+
+<div class="col-md-6 col-lg-6">
+  <a class="search-book-container" href="/books/<%= book.id %>">
+    <div class="thumb">
+      <img src="/images/book1.jpg" alt="even">
+    </div>
+    <div class="search-book-info">
+      <p>书名：<%= render_highlight_title(book, @query_string) %></p>
+      <p>作者: <%= book.author_name %></p>
+      <p>译者: <%= book.translater_name %></p>
+      <p>美亚评分: TODO</p>
+      <p>阅读数: TODO</p>
+    </div>
+  </a>
+</div>
