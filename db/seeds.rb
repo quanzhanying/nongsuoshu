@@ -42,7 +42,8 @@ CSV.foreach("import/condensed_book.csv") do |row|
     is_editor_choice: Random.new(1),
     subtitle: row[8],
     published_date: pb_date,
-    rating_from_ma: row[11]
+    rating_from_ma: row[11],
+    category_id:3
 
   )
 

@@ -9,7 +9,7 @@ class BooksController < ApplicationController
       if params[:category_id]
         Book.where("category_id = ?", params[:category_id])
       else
-        @books = Book.all.paginate(page: params[:page], per_page: 3)
+         Book.all.paginate(page: params[:page], per_page: 3)
       end
     @categories = Category.all
   end
