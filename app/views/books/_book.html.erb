@@ -1,10 +1,13 @@
-<div class="col-sm-3 book-block shell">
-    <div class="header">
+<div class="col-sm-2 book-block">
+  <div class="img-cover">
+      <%= render_book_cover(book) %>
+    </div>
+    <hr />
+    <div class="des">
         <h3>
           <%= render_book_title(book) %>
         </h3>
-    </div>
-    <div class="book-image-wrapper">
-      <%= render_book_cover(book) %>
+        <p>作者: <%= book.author_name %></p>
+        <p>美亚评分: <%=  book.rating_from_ma  %> </p>
     </div>
 </div>

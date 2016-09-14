@@ -24,7 +24,7 @@ module BooksHelper
   end
 
   def render_book_cover(book, size = :front)
-    link_to book_path(book.token), class: "thumbnail book-image" do
+    link_to book_path(book.token), class: "book-image" do
       render_book_cover_image_link(book, size)
     end
   end
