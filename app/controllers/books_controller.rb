@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: %i(show edit update destroy)
+  before_action :set_book, only: %i(show edit update destroy add_to_favorites remove_favorites)
   before_action :validate_search_key, only: [:search]
-  before_action :authenticate_user!, only: [:add_to_favorites, :remove_favorites] 
+  # before_action :authenticate_user!, only: [:add_to_favorites, :remove_favorites]
   # GET /books
   # GET /books.json
   def index
@@ -90,27 +90,36 @@ class BooksController < ApplicationController
 
 
   def add_to_favorites
-    @book = Book.find(params[:id])
-
+    message = {}
+    unless current_user
+      message[:needlogin] = "y"
+      render json: message
+      return
+    end
     if !current_user.has_added_to_favorites?(@book)
       current_user.add_to_favorites!(@book)
-      flash[:notice] = "加入收藏成功"
+      message[:status] = "y"
     else
-      flashl[:warning] = "已经收藏过了哦"
+      message[:status] = "n"
     end
-    redirect_to :back
+    render json: message
   end
 
 
   def remove_favorites
-    @book = Book.find(params[:id])
+    message = {}
+    unless current_user
+      message[:needlogin] = "y"
+      render json: message
+      return
+    end
     if current_user.has_added_to_favorites?(@book)
       current_user.remove_favorites!(@book)
-      flash[:notice] = "已取消收藏"
+      message[:status] = "y"
     else
-      flash[:warning] = "还未收藏，不可取消收藏哦"
+      message[:status] = "n"
     end
-    redirect_to :back
+    render json: message
   end
 
 
