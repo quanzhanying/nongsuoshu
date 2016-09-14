@@ -23,6 +23,10 @@
 @import "font-awesome";
 
 
+* {
+  margin: 0;
+}
+
 // Trix Form
 .formatted_content{
   min-height: 150px;
@@ -47,9 +51,6 @@
 }
 
 
-* {
-  margin: 0;
-}
 html, body {
   height: 100%;
 
