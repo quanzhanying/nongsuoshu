@@ -17,7 +17,14 @@
 #  updated_at             :datetime         not null
 #  is_admin               :true
 #  user_name              :string
-#  expire_date            :date
+#  expired_at             :datetime
+#  is_paid                :boolean
+#
+# Indexes
+#
+#  index_users_on_email                 (email) UNIQUE
+#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
+#
 #
 # Indexes
 #
@@ -35,6 +42,10 @@ class User < ApplicationRecord
 
   def admin?
     is_admin
+  end
+
+  def paid?
+    is_paid
   end
 
   def valid_subscriber?

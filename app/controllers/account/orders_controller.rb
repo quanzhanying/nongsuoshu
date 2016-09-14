@@ -1,5 +1,6 @@
 class Account::OrdersController < AccountController
   before_action :find_order, only: %i(show pay_with_wechat pay_with_alipay)
+  layout "user", only:[:index]
 
   def show
     @order = Order.find_by_token(params[:id])

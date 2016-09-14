@@ -17,7 +17,8 @@
 #  updated_at             :datetime         not null
 #  is_admin               :true
 #  user_name              :string
-#  expire_date            :date
+#  expired_at             :datetime
+#  is_paid                :boolean
 #
 # Indexes
 #
