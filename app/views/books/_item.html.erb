@@ -9,7 +9,7 @@
         <!-- <hr class="style-two"> -->
       </a>
     </div>
-    <div class="col-md-8 col-lg-8 book-info-out">
+    <div class="col-md-8 col-lg-8 book-info-out" bookId="<%= book.token %>">
       <div class="search-book-info">
         <p>书名：<%= render_book_title_search(render_highlight_title(book, @query_string), book) %></p>
         <p>作者: <%= book.author_name %></p>
@@ -26,3 +26,14 @@
     </div>
   </div>
 </div>
+
+<% content_for :javascripts do %>
+  <script>
+    $(function() {
+      $(".book-info-out").click(function () {
+        var url = "/books/" + $(this).attr("bookId") + "/";
+        window.open(url)
+      });
+    })
+  </script>
+<% end %>
