@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => {:registrations => "devise/registrations", :change_password => "registrations"}
+  devise_for :users, :controllers => {:registrations => "registrations", :change_password => "registrations"}
 
   resources :categories
 
