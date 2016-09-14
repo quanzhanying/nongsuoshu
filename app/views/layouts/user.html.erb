@@ -8,45 +8,43 @@
         <link rel="shortcut icon" href="/images/favicon.ico">
     </head>
 
-    <body>
-        <div class="container page-wrap">
+<body>
+    <div class="container page-wrap">
 
-            <div class="container-fluid">
-
-                <%= render "common/navbar" %>
-                <div class="container col-md-2 col-md-offset-0">
-                    <div class="notice notice-success">
-                    <li role="presentation" class="active"><%= link_to("我的资料", account_users_path) %>
-                    </li>
-                </div>
-                <div class="notice notice-warning">
-                    <li role="presentation" class="active"><%= link_to("我的收藏", account_favorites_path ) %>
-                    </li>
-                </div>
-                <div class="notice noti<%  %>ce-info">
-                    <li role="presentation" class="active">
-
-                        <%= link_to("我的订单", account_orders_path) %></li>
-                </div>
-                <!-- <div class="notice notice-danger">
-                          <li role="presentation" class="active"><%= link_to("用户管理",  "#") %></li>
-                        </div>
-                        <div class="notice notice-default">
-                          <li role="presentation" class="active"><%= link_to("资金流水", "#") %></li>
-                        </div> -->
-            </div>
-
-            <div class="col-md-10 col-md-offset-0">
-                <%= render "common/flashes" %>
-                <%= yield %>
-            </div>
+        <%= render "common/navbar" %>
+        <div class="container col-md-2 col-md-offset-0">
+            <div class="notice notice-success">
+            <li role="presentation" class="active"><%= link_to("我的资料", account_users_path) %>
+            </li>
         </div>
-    </div>
-</div>
-<div >
-    <%= render "common/footer" %>
-</div>
+        <div class="notice notice-warning">
+            <li role="presentation" class="active"><%= link_to("我的收藏", account_favorites_path ) %>
+            </li>
+        </div>
+        <div class="notice noti<%  %>ce-info">
+            <li role="presentation" class="active">
 
-<%= yield :orders_javascript %>
+                <%= link_to("我的订单", account_orders_path) %></li>
+        </div>
+        <!-- <div class="notice notice-danger">
+                  <li role="presentation" class="active"><%= link_to("用户管理",  "#") %></li>
+                </div>
+                <div class="notice notice-default">
+                  <li role="presentation" class="active"><%= link_to("资金流水", "#") %></li>
+                </div> -->
+        </div>
+
+        <div class="col-md-10 col-md-offset-0">
+            <%= render "common/flashes" %>
+            <%= yield %>
+        </div>
+
+    </div>
+
+    <div >
+        <%= render "common/footer" %>
+    </div>
+
+    <%= yield :orders_javascript %>
 </body>
 </html>
