@@ -45,6 +45,7 @@ Rails.application.routes.draw do
       member do
         get :change_password
       end
+    end
   end
 
   get "/how_it_works", to: "welcome#how_it_works"
