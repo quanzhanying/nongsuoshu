@@ -21,16 +21,28 @@ puts "4 Users' accounts created."
 
 require "csv"
 CSV.foreach("import/condensed_book.csv") do |row|
+  pb_date =
+    begin
+      Date.parse(row[9])
+    rescue
+      nil
+    end
   Book.create(
-    token: row[0],
+
+    old_book_id: row[0],
+    created_at: row[1],
+    updated_at: row[2],
     title: row[3],
     author_name: row[4],
+    cover_image_link: row[5],
     introduction: row[6],
     content: row[7],
     is_free: Random.new(1),
     is_editor_choice: Random.new(1),
-    published_date:     row[8],
-    cover_image_link: row[5]
+    subtitle: row[8],
+    published_date: pb_date,
+    rating_from_ma: row[11]
+
   )
 end
 

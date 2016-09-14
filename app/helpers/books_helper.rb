@@ -16,7 +16,7 @@ module BooksHelper
   end
 
   def render_book_title(book)
-    link_to(book.title, book_path(book))
+    link_to(book.title, book_path(book.token))
   end
 
   def render_book_cover(book, size = :front)
@@ -38,5 +38,4 @@ module BooksHelper
   def render_book_introduction(book)
     truncate(sanitize(book.introduction), escape: false, length: 160)
   end
-
 end

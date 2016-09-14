@@ -22,12 +22,12 @@
       <div class="book-publish">
         <p>作者: <%= @book.author_name %></p>
         <p>译者: <%= @book.translater_name %></p>
-        <p>出版时间: TODO</p>
-        <p>美亚评分: TODO</p>
+        <p>出版时间: <%= @book.published_date %> </p>
+        <p>美亚评分: <%=  @book.rating_from_ma  %> </p>
         <p>用户打分: TODO</p>
-        <p>阅读数: TODO</p>
-        <p>评论数: TODO</p>
-        <p>亚马逊连结: TODO</p>
+        <p>阅读数: <%= @book.pv %> </p>
+        <p>评论数: <%= @book.comments_count %> </p>
+        <p>亚马逊连结: <%= @book.amazon_link %> </p>
       </div>
     </div>
 
