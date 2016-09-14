@@ -1,27 +1,47 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Categories</h1>
+<!-- Page Content -->
+<div class="container">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <div class="row">
 
-  <tbody>
-    <% @categories.each do |category| %>
-      <tr>
-        <td><%= category.name %></td>
-        <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <div class="col-md-3">
+            <p class="lead">按分类查找你喜欢的内容</p>
+            <div class="list-group">
+                <% @categories.each do |category| %>
+                <%= link_to(category.chs_name, categories_path(category_id: category.id)) %>
+                <% end %>
+            </div>
+        </div>
 
-<br>
+        <div class="col-md-9">
 
-<%= link_to 'New Category', new_category_path %>
+            <div class="row">
+                <% @books.each do |book| %>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="thumbnail">
+                      <div class="caption">
+                          <h4><%= render_book_title(book) %></h4>
+                      </div>
+
+                      <div class="book-image-wrapper">
+
+                        <%= render_book_cover(book) %>
+
+                      </div>
+
+                    </div>
+                </div>
+                <% end %>
+
+            </div>
+            <div class="text-center">
+                <%= will_paginate @books %>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- /.container -->

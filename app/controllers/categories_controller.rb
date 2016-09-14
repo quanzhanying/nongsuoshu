@@ -4,6 +4,12 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
+    @books =
+      if params[:category_id]
+        Book.where("category_id = ?", params[:category_id])
+      else
+        Book.all.paginate(page: params[:page], per_page: 12)
+      end
     @categories = Category.all
   end
 
