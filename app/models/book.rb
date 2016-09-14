@@ -2,6 +2,7 @@ class Book < ApplicationRecord
   scope :recent, -> { order("created_at DESC") }
   scope :free, -> { where(is_free: true) }
   scope :editor_choice, -> { where(is_editor_choice: true) }
+  scope :recommend, -> (rand_num) { limit(4).offset(rand_num) }
 
   validates :title, presence: true
   validates :content, presence: true
