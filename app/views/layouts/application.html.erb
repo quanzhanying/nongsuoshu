@@ -3,33 +3,23 @@
     <head>
         <%= render_page_title_tag %>
         <%= csrf_meta_tags %>
-
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     </head>
 
     <body>
-
-        <div class="container page-wrap">
-            <%= render "common/navbar" %>
-            <%= render "common/flashes" %>
-            <div class="row" style=" padding-top:20px;">
-
-                <div class="col-md-12">
-                    <%# render_breadcrumb %>
-                    <%= yield %>
-                </div>
-            </div>
+        <div>
+          <%= render "common/navbar" %>
         </div>
-
+        <div class="container page-wrap ">
+            <%= render "common/flashes" %>
+             <%# render_breadcrumb %>
+            <%= yield %>
+        </div>
+        <div class="site-footer">
+            <%= render "common/footer" %>
+        </div>
+            <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+            <%= yield :javascripts %>
     </body>
-    <div class="container site-footer">
-        <%= render "common/footer" %>
-    </div>
-
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-    <%= yield :javascripts %>
 </html>
