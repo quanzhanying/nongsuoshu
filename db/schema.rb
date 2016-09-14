@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160914025340) do
+ActiveRecord::Schema.define(version: 20160914030019) do
 
   create_table "books", force: :cascade do |t|
     t.string   "title"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20160914025340) do
     t.string   "translater_name"
     t.boolean  "is_free",           default: false
     t.boolean  "is_editor_choice",  default: false
+    t.string   "token"
     t.index ["aasm_state"], name: "index_books_on_aasm_state"
   end
 

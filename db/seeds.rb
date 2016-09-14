@@ -22,7 +22,9 @@ puts "4 Users' accounts created."
 require "csv"
 CSV.foreach("import/condensed_book.csv") do |row|
   Book.create(
+    token: row[0],
     title: row[3],
+    author_name: row[4],
     introduction: row[6],
     content: row[7],
     is_free: Random.new(1),

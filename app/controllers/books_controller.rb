@@ -19,11 +19,11 @@ class BooksController < ApplicationController
     @is_valid_subscriber = true
     unless current_user
       @book.content = view_context.truncate(@book.content, length: 140)
-      @is_valid_subscriber = false;
+      @is_valid_subscriber = false
     end
     if current_user && !current_user.valid_subscriber?
       @book.content = view_context.truncate(@book.content, length: 140)
-      @is_valid_subscriber = false;
+      @is_valid_subscriber = false
     end
 
     set_page_title @book.title
@@ -101,7 +101,7 @@ class BooksController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_book
-    @book = Book.find(params[:id])
+    @book = Book.find_by_token(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
