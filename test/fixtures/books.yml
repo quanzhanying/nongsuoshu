@@ -22,6 +22,8 @@
 #  is_editor_choice  :boolean          default(FALSE)
 #  token             :string
 #  cover_image_link  :string
+#  old_book_id       :string
+#  subtitle          :string
 #
 # Indexes
 #
