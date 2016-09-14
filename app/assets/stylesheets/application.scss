@@ -72,11 +72,23 @@ html, body {
 }
 .site-footer {
   background: #323232;
-    color: #ffffff;
+  color: #ffffff;
   padding-top: 20px;
-
+  margin-top: 20px;
   a:link {color: #CCCCCC};
-a:visited {color: #CCCCCC}	;
-a:hover {color: #FFFFFF}	;
-a:active {color: #FFFFFF};
+  a:visited {color: #CCCCCC}	;
+  a:hover {color: #FFFFFF}	;
+  a:active {color: #FFFFFF};
 }
+// config navbar by nfreeness
+.navbar-header {
+img{
+  margin-top: 9px;
+  margin-right: 10px;
+  float:left;
+}
+// a{
+//   float: left;
+// }
+}
+// congi navbar end
