@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => {:registrations => "registrations", :change_password => "registrations"}
+  devise_for :users, controllers: { registrations: "registrations", change_password: "registrations" }
 
   resources :categories
 
@@ -23,6 +23,10 @@ Rails.application.routes.draw do
         post :publish
         post :hide
       end
+      collection do
+        get :new_import
+        post :create_import
+      end
     end
     resources :faqs
     resources :orders
@@ -37,7 +41,6 @@ Rails.application.routes.draw do
   end
 
   namespace :account do
-
     resources :orders do
       member do
         post :pay_with_alipay
@@ -52,11 +55,7 @@ Rails.application.routes.draw do
       end
     end
 
-
     resources :favorites
-
-
-
   end
 
   resources :notifications do

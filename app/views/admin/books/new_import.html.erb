@@ -1,0 +1,7 @@
+
+
+<%= form_tag create_import_admin_books_path, :method => :post, multipart: true do %>
+
+  <%= file_field_tag :file %>
+  <%= submit_tag("Submit") %>
+<% end %>
