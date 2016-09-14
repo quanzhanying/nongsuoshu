@@ -28,7 +28,8 @@ CSV.foreach("import/condensed_book.csv") do |row|
     introduction: row[6],
     content: row[7],
     is_free: Random.new(1),
-    is_editor_choice: Random.new(1)
+    is_editor_choice: Random.new(1),
+    published_date:     row[8]
   )
 end
 
