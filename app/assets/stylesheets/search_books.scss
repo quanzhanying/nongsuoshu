@@ -38,7 +38,7 @@
 
 .book-short-content > p::before {
   content: "";
-  background: url(quote.png) no-repeat;
+  background: url('<%= asset_path("quote.png") %>') no-repeat;
   display: block;
   height: 30px;
   width: 30px;
