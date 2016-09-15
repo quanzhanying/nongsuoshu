@@ -1,1 +1,1 @@
-<%= render :partial => "book", :collection => Book.free.recent.limit(10), :as => :book %>
+<%= render :partial => "book", :collection => Book.free.recent.limit(10).offset(1), :as => :book %>

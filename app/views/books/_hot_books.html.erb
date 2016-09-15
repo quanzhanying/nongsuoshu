@@ -1,1 +1,1 @@
-<%= render :partial => "book", :collection => Book.editor_choice.recent.limit(10), :as => :book %>
+<%= render :partial => "book", :collection => Book.editor_choice.limit(10).offset(3), :as => :book %>
