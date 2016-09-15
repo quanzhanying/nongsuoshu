@@ -1,17 +1,19 @@
 <div class="row">
     <% @books.each do |book| %>
-    <div class="col-sm-4 col-lg-4 col-md-4">
-        <div class="book-block">
-            <div class="caption">
-                <h4><%= render_book_title(book) %></h4>
-            </div>
-
-            <div class="book-image-wrapper">
-
-                <%= render_book_cover(book) %>
-
-            </div>
-
+    <div class="col-sm-2 book-block small">
+        <div class="img-cover">
+            <%= render_book_cover(book) %>
+        </div>
+        <hr/>
+        <div class="des">
+            <h3>
+                <%= render_book_title(book) %>
+            </h3>
+            <p>作者:
+                <%= render_index_author_name(book) %></p>
+            <p>美亚评分:
+                <%=  book.rating_from_ma  %>
+            </p>
         </div>
     </div>
     <% end %>
@@ -20,7 +22,5 @@
 <div class="text-center">
     <%= will_paginate @books %>
 </div>
-
-
 
 <!-- /.container -->
