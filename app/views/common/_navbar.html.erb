@@ -25,19 +25,20 @@
               <li>
                 <%= link_to("购买会员", plans_path ,class:"lp-action btn sm") %>
               </li>
-
-              <li class="nav-item btn-group" data-behavior="notifications" data-notifications='<%= render template: "notifications/index", formats: [:json] %>'>
-                <a class="dropdown-toggle nav-link notice-ring" type="button" data-behavior="notifications-link" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <%= fa_icon "bell" %> <span data-behavior="unread-count"></span>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenu1" data-behavior="notification-items">
-                  <!--
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
+              <% if current_user %>
+                <li class="nav-item btn-group" data-behavior="notifications" data-notifications='<%= render template: "notifications/index", formats: [:json] %>'>
+                  <a class="dropdown-toggle nav-link notice-ring" type="button" data-behavior="notifications-link" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <%= fa_icon "bell" %> <span data-behavior="unread-count"></span>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenu1" data-behavior="notification-items">
+                    <!--
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
                   -->
                 </div>
               </li>
+              <% end %>
                 <% if !current_user %>
                 <li><%= link_to("注册", new_user_registration_path) %>
                 </li>
