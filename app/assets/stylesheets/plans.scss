@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// plan-dec
+// plan-des
 .plan-description{
   margin: 0 30px;
   text-align: left;
@@ -20,11 +20,32 @@
     font-size: 1em;
     margin-bottom: 30px;
     margin-right: 40px;
-
   }
 }
+// plan-des end
 
-//
+// plan-q&a
+.plan-qa{
+  margin: 0 30px;
+  text-align: left;
+  color: #666;
+  background-color: #fff;
+  h3{
+    font-size: 1.5em;
+  }
+  h4{
+    font-size: 1.2em;
+    color:#333;
+    margin: 5px 0;
+  }
+  p{
+    font-size: 1em;
+    margin-bottom: 30px;
+    margin-right: 40px;
+  }
+}
+// plan-q&a end
+
 
 
 // plan banner
@@ -123,9 +144,9 @@
         margin-bottom: 20px;
         position: relative;
         text-align: center;
-        padding-top: 60px;
-        padding-bottom: 60px;
+        padding-top: 30px;
+        padding-bottom: 30px;
         background-color: white;
-        min-height: 680px;
+        min-height: 200px;
       }
     }
