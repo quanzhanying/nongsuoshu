@@ -7,11 +7,16 @@
 
 // config hot section
 .section{
-  margin: 20px 20px 20px 0;
+  margin: auto;
+  width: 100%;
   // background-color: #dedede;
   }
 
-
+.section-center{
+  width: 1080px;
+  margin: auto;
+  // background-color: #dedede;
+}
 
 .book-block{
   width: 240px;
@@ -21,7 +26,7 @@
   background-color: #fff;
   border: 1px solid #888;
   padding: 0 !important;
-  margin: 20px 30px 0 0;
+  margin: 20px 15px 0;
 
   .img-cover{
     overflow: hidden;
@@ -37,33 +42,34 @@
   }
   .des{
     margin-left: 10px;
-  }
-  a:link {color: #888};
-  a:visited {color: #888}	;
-  a:hover {color: #333}	;
-  a:active {color: #333};
-  h3{
-    font-size: 1em;
-    padding: 0;
-    margin: 10px 0 ;
-  }
-  p{
-    font-size: 1em;
-    color: #666;
-    padding: 0;
-    margin: 0;
-  }
+
+    a:link {color: #888};
+    a:visited {color: #888}	;
+    a:hover {color: #333}	;
+    a:active {color: #333};
+    h3{
+      font-size: 1em;
+      padding: 0;
+      margin: 10px 0 ;
+    }
+    p{
+      font-size: 1em;
+      color: #666;
+      padding: 0;
+      margin: 0 !important;
+    }
+    }
 }
 
 .book-block.small{
   width: 180px;
   max-width: 180px;
   min-width: 180px;
-  height: 320px;
+  height: 305px;
   background-color: #fff;
   border: 1px solid #888;
   padding: 0 !important;
-  margin: 20px 30px 0 0;
+  margin: 20px 15px 0;
 
   .img-cover{
     overflow: hidden;
@@ -79,6 +85,7 @@
   }
   .des{
     margin-left: 10px;
+    line-height: 18px;
     h3{
       font-size: 1em;
       padding: 0;
@@ -90,10 +97,10 @@
       padding: 0;
       margin: 0;
     }
-    a:link {color: #888};
-    a:visited {color: #888}	;
-    a:hover {color: #333}	;
-    a:active {color: #333};
+    a:link {color: #333};
+    a:visited {color: #333}	;
+    a:hover {color: #666}	;
+    a:active {color: #666};
   }
 
 
@@ -288,13 +295,14 @@ hr.style-two {
   }
   .nav-tabs {
     // 标签条下方border
-    border-bottom: 3px solid #9bcdf0;
+    border-bottom: 3px solid transparent;
     // border-bottom: none;
 
   }
   .nav-tabs > li {
     float: left;
     // 悬停标签下方颜色条为－3px，和选中状态的标签在同一水平线
+    margin-left: 15px;
     margin-bottom: -3px;
 
   }
