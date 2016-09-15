@@ -1,40 +1,43 @@
 <div class="index-banner">
-  <div class="hero-title">
-    <h1>浓缩就是精华</h1>
-    <p>为飞速进步而读书</p>
-  </div>
+    <div class="hero-title">
+        <h1>浓缩就是精华</h1>
+        <p>为飞速进步而读书</p>
+    </div>
 </div>
 
-      <div class="col-sm-12 col-xs-12 section">
-        <div class="section-center">
-                <div class="panel panel-default">
-                    <!-- /.panel-heading -->
-                    <div class="panel-body">
-                        <!-- Nav tabs -->
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#hot" data-toggle="tab">精选</a>
-                            </li>
-                            <li><a href="#latest" data-toggle="tab">最新</a>
-                            </li>
-                            <li><a href="#free" data-toggle="tab">免费阅读</a>
-                            </li>
-                        </ul>
+<div class="col-sm-12 col-xs-12 section">
+    <div class="section-center">
+        <div class="panel panel-default">
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#hot" data-toggle="tab">精选</a>
+                    </li>
+                    <li>
+                        <a href="#latest" data-toggle="tab">最新</a>
+                    </li>
+                    <li>
+                        <a href="#free" data-toggle="tab">免费阅读</a>
+                    </li>
+                </ul>
 
-                        <!-- Tab panes -->
-                        <div class="tab-content">
-                            <div class="tab-pane fade in active" id="hot">
-                              <%= render :partial => "books/hot_books" %>
-                            </div>
-                            <div class="tab-pane fade" id="latest">
-                              <%= render :partial => "books/latest_books" %>
-                            </div>
-                            <div class="tab-pane fade" id="free">
-                              <%= render :partial => "books/free_books" %>
-                            </div>
-                        </div>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="hot">
+                        <%= render :partial => "books/hot_books" %>
                     </div>
-                    <!-- /.panel-body -->
+                    <div class="tab-pane fade" id="latest">
+                        <%= render :partial => "books/latest_books" %>
+                    </div>
+                    <div class="tab-pane fade" id="free">
+                        <%= render :partial => "books/free_books" %>
+                    </div>
                 </div>
-                <!-- /.panel -->
-              </div>
             </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+</div>
