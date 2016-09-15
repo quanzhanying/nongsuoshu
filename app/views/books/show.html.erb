@@ -71,7 +71,7 @@
           success: function(data){
             if(data.status == "y") {
               if(obj.hasClass("fa-heart-o")) {
-                obj.addClass("fa-heart").removeClass("fa-heart-o");
+                obj.addClass("fa-heart red-heart").removeClass("fa-heart-o");
               }
             } else if(data.needlogin == "y") {
               alert("请先登录");
@@ -88,7 +88,7 @@
           success: function(data){
             if(data.status == "y") {
               if(obj.hasClass("fa-heart")) {
-                obj.addClass("fa-heart-o").removeClass("fa-heart");
+                obj.addClass("fa-heart-o").removeClass("fa-heart").removeClass("red-heart");
               }
             } else if(data.needlogin == "y") {
               alert("请先登录");
