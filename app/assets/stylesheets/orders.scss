@@ -1,3 +1,25 @@
 // Place all the styles related to the orders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.order-action.btn.sm{
+    font-size: 18px;
+    text-align: center;
+    padding: 4px 0 0 6px;
+    margin: 9px 20px 0 60px;
+    width: 150px;
+    height: 45px;
+    color: #FFF;
+    background: #0099ff;
+    letter-spacing: 0.1em;
+    a:link {color: #FFF};
+    a:visited {color: #FFF}	;
+    a:hover {color: #fff}	;
+    a:active {color: #fff};
+}
+
+.order-action.btn.sm.btn:hover, .order-action.btn.sm.btn:focus, .order-action.btn.sm.btn.focus{
+  background-color: #22a7ff;
+  color: #fff;
+}
