@@ -22,3 +22,25 @@
   background-color: #22a7ff;
   color: #fff;
 }
+
+.plan-part {
+    display: block;
+    width: 100%;
+    // height: 550px;
+    min-width: 900px;
+    .plan-block {
+        display: block;
+        width: 900px;
+        // height: 550px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        position: relative;
+        text-align: center;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        background-color: white;
+        min-height: 680px;
+      }
+    }

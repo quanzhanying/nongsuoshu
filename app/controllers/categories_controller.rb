@@ -4,14 +4,14 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    @books = Book.all.paginate(page: params[:page], per_page: 9)
+    @books = Book.all.paginate(page: params[:page], per_page: 16)
     @categories = Category.all
   end
 
   # GET /categories/1
   # GET /categories/1.json
   def show
-    @books = Book.where("category_id = ?", params[:id]).paginate(page: params[:page], per_page: 9)
+    @books = Book.where("category_id = ?", params[:id]).paginate(page: params[:page], per_page: 16)
     @categories = Category.all
   end
 
