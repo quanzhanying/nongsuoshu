@@ -10,12 +10,12 @@
 
   <body>
       <%= render "common/navbar" %>
-      <div class="container body-bg" >
-        <div class="container col-md-3">
+      <div class="container body-bg">
+        <div class="container col-md-2">
             <%= render "/categories/left_sidebar" %>
         </div>
 
-        <div class="col-md-9">
+        <div class="col-md-10">
           <%= render "common/flashes" %>
           <div class="user-wrap-main">
             <%= yield %>

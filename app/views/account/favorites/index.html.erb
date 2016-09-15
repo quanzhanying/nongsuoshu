@@ -7,20 +7,20 @@
 
 <% @books.each do |book| %>
 
-<div class="col-sm-4 shell">
-    <div class="header">
-        <h3>
-
-          <%= render_book_title(book) %>
-
-
-        </h3>
+<div class="col-sm-2 book-block small">
+    <div class="img-cover">
+        <%= render_book_cover(book) %>
     </div>
-    <div class="book-image-wrapper">
-
-      <%= render_book_cover(book) %>
-
+    <hr/>
+    <div class="des">
+        <h3>
+            <%= render_book_title(book) %>
+        </h3>
+        <p>作者:
+            <%= render_index_author_name(book) %></p>
+        <p>美亚评分:
+            <%=  book.rating_from_ma  %>
+        </p>
     </div>
 </div>
-
 <% end %>
