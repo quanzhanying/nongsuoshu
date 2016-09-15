@@ -1,56 +1,42 @@
-
 <div class="plan-part">
-  <div class="plan-block">
+    <div class="plan-block1">
+        <div class="plan-p">
+            <h3>订购详情</h3>
+            <p>
+                当您选择了我们的商品和服务，即表示您已经接受了浓缩书的隐私声明和使用条件。您点击“提交订单”按钮后，我们将向您发送电子邮件或短信确认我们已收到您的订单，只有当我们向您发出发货确认的电子邮件或短信，方构成我们对您的订单的确认，我们和您之间的订购合同才成立。
+            </p>
 
-
-
-
-<div class="row">
-    <div class="col-md-12">
-
-      <div class="well">
-        <h3>
-            订购详情</h3>
-        <p class="small">
-            当您选择了我们的商品和服务，即表示您已经接受了浓缩书的隐私声明和使用条件。您点击“提交订单”按钮后，我们将向您发送电子邮件或短信确认我们已收到您的订单，只有当我们向您发出发货确认的电子邮件或短信，方构成我们对您的订单的确认，我们和您之间的订购合同才成立。
-        </p>
-
-</div>
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <ul class="media-list">
-                    <li class="media">
-
-                        <div class="media-body">
-                            <p class="media-heading lead">
-                                <strong>年费会员</strong>
-                            </p>
-                            <p></p>
-                            <ul>
-                                <li>全年免费阅读站上所有书籍</li>
-                                <li>加入社群后，不定期会有各种干货分享</li>
-                                <li>可加入干货社群，有机会参与各种线上线下活动</li>
-                            </ul>
-                            <p></p>
-                        </div>
-                    </li>
-                </ul>
-                <br>
-                <div class="container text-center">
-                    <p class="lead text-danger text-left">
-                        订单总计：¥ <%= Plan.yearly_plan.price %>
-                    </p>
-
-                    <%= simple_form_for @order do |f| %>
-                      <%= f.submit "提交订单", :class => "btn btn-success btn-lg",  disable_with: "提交中..." %>
-                    <% end %>
-                </div>
-            </div>
         </div>
 
+        <div class="plan-p2">
+            <h4>年费会员</h4>
+            <p>
+                <i class="fa fa-check" aria-hidden="true" style="color:#42ca73;"></i> 全年免费阅读站上所有书籍
+            </p>
+            <p>
+              <i class="fa fa-check" aria-hidden="true" style="color:#42ca73;"></i>
+                加入社群后，不定期会有各种干货分享
+            </p>
+            <p>
+              <i class="fa fa-check" aria-hidden="true" style="color:#42ca73;"></i>
+                可加入干货社群，有机会参与各种线上线下活动
+            </p>
+
+            <div>
+                <p class="price">
+                    ¥
+                    <%= Plan.yearly_plan.price %>
+                </p>
+
+            </div>
+
+        </div>
+
+        <%= simple_form_for @order do |f| %>
+        <%= f.submit "提交订单",class:"plan-button" , disable_with: "提交中..." %>
+        <% end %>
+
+        <br>
+
     </div>
-</div>
-
-
-</div>
 </div>
